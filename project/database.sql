@@ -40,7 +40,7 @@ CREATE TABLE PatientInfo (
   emergencyContact    TEXT,
 
   PRIMARY KEY (patientID),
-  FOREIGN KEY (currMedID) REFERENCES CurrentMedical (currMedID)
+  FOREIGN KEY (currMedID) REFERENCES CurrentMedicals (currMedID)
   ON DELETE CASCADE
 );
 
@@ -89,7 +89,7 @@ CREATE TABLE getInfo (
   PRIMARY KEY (patientID, nurseID),
   FOREIGN KEY (patientID) REFERENCES PatientInfo (patientID)
     ON DELETE CASCADE,
-  FOREIGN KEY (nurseID)   REFERENCES Nurse (nurseID)
+  FOREIGN KEY (nurseID)   REFERENCES Nurses (nurseID)
 );
 
 CREATE TABLE patientHistory (
@@ -99,7 +99,7 @@ CREATE TABLE patientHistory (
   PRIMARY KEY (patientID, medHisID),
   FOREIGN KEY (patientID) REFERENCES PatientInfo (patientID)
     ON DELETE CASCADE,
-  FOREIGN KEY (medHisID)  REFERENCES MedicalHistory (medHisID)
+  FOREIGN KEY (medHisID)  REFERENCES MedicalHistories (medHisID)
 );
 
 CREATE TABLE runTest (
@@ -108,7 +108,7 @@ CREATE TABLE runTest (
   dateAndTime       TIMESTAMP,
 
   PRIMARY KEY (nurseID, testID, dateAndTime),
-  FOREIGN KEY (nurseID) REFERENCES Nurse (nurseID),
+  FOREIGN KEY (nurseID) REFERENCES Nurses (nurseID),
   FOREIGN KEY (testID, dateAndTime) REFERENCES LabTestsResults (testID, dateAndTime)
    ON DELETE CASCADE
 );
@@ -129,23 +129,23 @@ CREATE TABLE analyzeOrDiagnose (
   medHisID        INT,
 
   PRIMARY KEY (doctorID, medHisID),
-  FOREIGN KEY (doctorID) REFERENCES Doctor (doctorID),
-  FOREIGN KEY (medHisID) REFERENCES MedicalHistory (medHisID)
+  FOREIGN KEY (doctorID) REFERENCES Doctors (doctorID),
+  FOREIGN KEY (medHisID) REFERENCES MedicalHistories (medHisID)
 );
 
 DELETE FROM PatientInfo;
-DELETE FROM CurrentMedical;
-DELETE FROM Nurse;
+DELETE FROM CurrentMedicals;
+DELETE FROM Nurses;
 DELETE FROM LabTestsResults;
-DELETE FROM MedicalHistory;
-DELETE FROM Doctor;
+DELETE FROM MedicalHistories;
+DELETE FROM Doctors;
 DELETE FROM getInfo;
 DELETE FROM patientHistory;
 DELETE FROM runTest;
 DELETE FROM patientTest;
 DELETE FROM analyzeOrDiagnose;
 
-INSERT INTO CurrentMedical VALUES
+INSERT INTO CurrentMedicals VALUES
   (000, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 150, 132),
   (234, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 200, 83.6);
 
@@ -153,7 +153,7 @@ INSERT INTO PatientInfo VALUES
   (123, 000, "Danielle Reyes", "1998-05-08", "B+", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Vilma Reyes - Mother - 09161234567"),
   (923, 234, "Bridget Legaspi", "1998-04-14", "A+", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Ferddie Legaspi - Father - 09178360893");
 
-INSERT INTO Nurse VALUES
+INSERT INTO Nurses VALUES
   (123, "Nurse Nadine Reyes", "Triage"),
   (456, "Nurse Allure Tanquintic", "Rad Tech");
 
@@ -161,11 +161,11 @@ INSERT INTO LabTestsResults VALUES
   (010, CURRENT_TIMESTAMP, "Fecalysis", "With Diarrhea"),
   (555, CURRENT_TIMESTAMP, "Blood Chem", "Negative");
 
-INSERT INTO MedicalHistory VALUES
+INSERT INTO MedicalHistories VALUES
   (12345, CURRENT_TIMESTAMP, "Medication", "Lung Cancer"),
   (00001, CURRENT_TIMESTAMP, "Medication", "Prostate Cancer");
 
-INSERT INTO Doctor VALUES
+INSERT INTO Doctors VALUES
   (9999, "Dra. Nadine Reyes", "General Surgery", "Surgery", 500, "MWF"),
   (7123, "Dr. Daniel Reyes", "Neurosurgery", "Surgery", 1000, "TTh");
 
@@ -190,11 +190,11 @@ INSERT INTO analyzeOrDiagnose VALUES
   (7123, 00001);
 
 SELECT * FROM PatientInfo;
-SELECT * FROM CurrentMedical;
-SELECT * FROM Nurse;
+SELECT * FROM CurrentMedicals;
+SELECT * FROM Nurses;
 SELECT * FROM LabTestsResults;
-SELECT * FROM MedicalHistory;
-SELECT * FROM Doctor;
+SELECT * FROM MedicalHistories;
+SELECT * FROM Doctors;
 SELECT * FROM getInfo;
 SELECT * FROM patientHistory;
 SELECT * FROM runTest;

@@ -12,7 +12,7 @@
 
 ActiveRecord::Schema.define(version: 0) do
 
-  create_table "CurrentMedical", primary_key: "currMedID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "CurrentMedicals", primary_key: "currMedID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.timestamp "dateCreated"
     t.timestamp "dateUpdated"
     t.text "medications"
@@ -23,7 +23,7 @@ ActiveRecord::Schema.define(version: 0) do
     t.float "weight"
   end
 
-  create_table "Doctor", primary_key: "doctorID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "Doctors", primary_key: "doctorID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "docName", limit: 50
     t.string "specialization", limit: 50
     t.string "department", limit: 50
@@ -38,13 +38,13 @@ ActiveRecord::Schema.define(version: 0) do
     t.text "testResults"
   end
 
-  create_table "MedicalHistory", primary_key: "medHisID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "MedicalHistories", primary_key: "medHisID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.timestamp "dateAndTime"
     t.text "medication"
     t.text "diseaseOrCondition"
   end
 
-  create_table "Nurse", primary_key: "nurseID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
+  create_table "Nurses", primary_key: "nurseID", id: :integer, default: nil, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci", force: :cascade do |t|
     t.string "nurseName", limit: 50
     t.string "department", limit: 50
   end
@@ -92,17 +92,17 @@ ActiveRecord::Schema.define(version: 0) do
     t.index ["testID", "dateAndTime"], name: "testID"
   end
 
-  add_foreign_key "PatientInfo", "CurrentMedical", column: "currMedID", primary_key: "currmedid", name: "patientinfo_ibfk_1", on_delete: :cascade
-  add_foreign_key "analyzeOrDiagnose", "Doctor", column: "doctorID", primary_key: "doctorid", name: "analyzeordiagnose_ibfk_1"
-  add_foreign_key "analyzeOrDiagnose", "MedicalHistory", column: "medHisID", primary_key: "medhisid", name: "analyzeordiagnose_ibfk_2"
-  add_foreign_key "getInfo", "Nurse", column: "nurseID", primary_key: "nurseid", name: "getinfo_ibfk_2"
+  add_foreign_key "PatientInfo", "CurrentMedicals", column: "currMedID", primary_key: "currmedid", name: "patientinfo_ibfk_1", on_delete: :cascade
+  add_foreign_key "analyzeOrDiagnose", "Doctors", column: "doctorID", primary_key: "doctorid", name: "analyzeordiagnose_ibfk_1"
+  add_foreign_key "analyzeOrDiagnose", "MedicalHistories", column: "medHisID", primary_key: "medhisid", name: "analyzeordiagnose_ibfk_2"
+  add_foreign_key "getInfo", "Nurses", column: "nurseID", primary_key: "nurseid", name: "getinfo_ibfk_2"
   add_foreign_key "getInfo", "PatientInfo", column: "patientID", primary_key: "patientid", name: "getinfo_ibfk_1", on_delete: :cascade
-  add_foreign_key "patientHistory", "MedicalHistory", column: "medHisID", primary_key: "medhisid", name: "patienthistory_ibfk_2"
+  add_foreign_key "patientHistory", "MedicalHistories", column: "medHisID", primary_key: "medhisid", name: "patienthistory_ibfk_2"
   add_foreign_key "patientHistory", "PatientInfo", column: "patientID", primary_key: "patientid", name: "patienthistory_ibfk_1", on_delete: :cascade
   add_foreign_key "patientTest", "LabTestsResults", column: "dateAndTime", primary_key: "dateandtime", name: "patienttest_ibfk_2"
   add_foreign_key "patientTest", "LabTestsResults", column: "testID", primary_key: "testid", name: "patienttest_ibfk_2"
   add_foreign_key "patientTest", "PatientInfo", column: "patientID", primary_key: "patientid", name: "patienttest_ibfk_1", on_delete: :cascade
   add_foreign_key "runTest", "LabTestsResults", column: "dateAndTime", primary_key: "dateandtime", name: "runtest_ibfk_2", on_delete: :cascade
   add_foreign_key "runTest", "LabTestsResults", column: "testID", primary_key: "testid", name: "runtest_ibfk_2", on_delete: :cascade
-  add_foreign_key "runTest", "Nurse", column: "nurseID", primary_key: "nurseid", name: "runtest_ibfk_1"
+  add_foreign_key "runTest", "Nurses", column: "nurseID", primary_key: "nurseid", name: "runtest_ibfk_1"
 end
