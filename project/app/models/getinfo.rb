@@ -1,0 +1,2 @@
+class Getinfo < ApplicationRecord
+end

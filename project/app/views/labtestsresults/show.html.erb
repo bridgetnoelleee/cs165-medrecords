@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Testid:</strong>
+  <%= @labtestsresult.testID %>
+</p>
+
+<p>
+  <strong>Dateandtime:</strong>
+  <%= @labtestsresult.dateAndTime %>
+</p>
+
+<p>
+  <strong>Testname:</strong>
+  <%= @labtestsresult.testName %>
+</p>
+
+<p>
+  <strong>Testresults:</strong>
+  <%= @labtestsresult.testResults %>
+</p>
+
+<%= link_to 'Edit', edit_labtestsresult_path(@labtestsresult) %> |
+<%= link_to 'Back', labtestsresults_path %>

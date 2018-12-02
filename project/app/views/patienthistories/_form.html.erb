@@ -1,0 +1,27 @@
+<%= form_with(model: patienthistory, local: true) do |form| %>
+  <% if patienthistory.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(patienthistory.errors.count, "error") %> prohibited this patienthistory from being saved:</h2>
+
+      <ul>
+      <% patienthistory.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :patientID %>
+    <%= form.number_field :patientID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medHisID %>
+    <%= form.number_field :medHisID %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

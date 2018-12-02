@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Patientid:</strong>
+  <%= @getinfo.patientID %>
+</p>
+
+<p>
+  <strong>Nurseid:</strong>
+  <%= @getinfo.nurseID %>
+</p>
+
+<%= link_to 'Edit', edit_getinfo_path(@getinfo) %> |
+<%= link_to 'Back', getinfos_path %>

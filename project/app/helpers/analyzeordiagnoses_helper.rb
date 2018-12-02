@@ -1,0 +1,2 @@
+module AnalyzeordiagnosesHelper
+end

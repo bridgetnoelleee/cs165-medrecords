@@ -87,7 +87,7 @@ CREATE TABLE getInfo (
   nurseID         INT,
 
   PRIMARY KEY (patientID, nurseID),
-  FOREIGN KEY (patientID) REFERENCES PatientInfo (patientID)
+  FOREIGN KEY (patientID) REFERENCES PatientInfos (patientID)
     ON DELETE CASCADE,
   FOREIGN KEY (nurseID)   REFERENCES Nurses (nurseID)
 );
@@ -97,7 +97,7 @@ CREATE TABLE patientHistory (
   medHisID        INT,
 
   PRIMARY KEY (patientID, medHisID),
-  FOREIGN KEY (patientID) REFERENCES PatientInfo (patientID)
+  FOREIGN KEY (patientID) REFERENCES PatientInfos (patientID)
     ON DELETE CASCADE,
   FOREIGN KEY (medHisID)  REFERENCES MedicalHistories (medHisID)
 );
@@ -119,7 +119,7 @@ CREATE TABLE patientTest (
   dateAndTime       TIMESTAMP,
 
   PRIMARY KEY (patientID, testID, dateAndTime),
-  FOREIGN KEY (patientID) REFERENCES PatientInfo (patientID)
+  FOREIGN KEY (patientID) REFERENCES PatientInfos (patientID)
      ON DELETE CASCADE,
   FOREIGN KEY (testID, dateAndTime) REFERENCES LabTestsResults (testID, dateAndTime)
 );
@@ -133,23 +133,23 @@ CREATE TABLE analyzeOrDiagnose (
   FOREIGN KEY (medHisID) REFERENCES MedicalHistories (medHisID)
 );
 
-DELETE FROM PatientInfo;
+DELETE FROM PatientInfos;
 DELETE FROM CurrentMedicals;
 DELETE FROM Nurses;
 DELETE FROM LabTestsResults;
 DELETE FROM MedicalHistories;
 DELETE FROM Doctors;
-DELETE FROM getInfo;
-DELETE FROM patientHistory;
-DELETE FROM runTest;
-DELETE FROM patientTest;
-DELETE FROM analyzeOrDiagnose;
+DELETE FROM getInfos;
+DELETE FROM patientHistories;
+DELETE FROM runTests;
+DELETE FROM patientTests;
+DELETE FROM analyzeOrDiagnoses;
 
 INSERT INTO CurrentMedicals VALUES
   (000, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 150, 132),
   (234, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 200, 83.6);
 
-INSERT INTO PatientInfo VALUES
+INSERT INTO PatientInfos VALUES
   (123, 000, "Danielle Reyes", "1998-05-08", "B+", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Vilma Reyes - Mother - 09161234567"),
   (923, 234, "Bridget Legaspi", "1998-04-14", "A+", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Ferddie Legaspi - Father - 09178360893");
 
@@ -169,37 +169,37 @@ INSERT INTO Doctors VALUES
   (9999, "Dra. Nadine Reyes", "General Surgery", "Surgery", 500, "MWF"),
   (7123, "Dr. Daniel Reyes", "Neurosurgery", "Surgery", 1000, "TTh");
 
-INSERT INTO getInfo VALUES
+INSERT INTO getInfos VALUES
   (123, 123),
   (923, 123);
 
-INSERT INTO patientHistory VALUES
+INSERT INTO patientHistories VALUES
   (123, 12345),
   (923, 00001);
 
-INSERT INTO runTest VALUES
+INSERT INTO runTests VALUES
   (123, 010, CURRENT_TIMESTAMP),
   (123, 555, CURRENT_TIMESTAMP);
 
-INSERT INTO patientTest VALUES
+INSERT INTO patientTests VALUES
   (123, 010, CURRENT_TIMESTAMP),
   (923, 555, CURRENT_TIMESTAMP);
 
-INSERT INTO analyzeOrDiagnose VALUES
+INSERT INTO analyzeOrDiagnoses VALUES
   (9999, 12345),
   (7123, 00001);
 
-SELECT * FROM PatientInfo;
+SELECT * FROM PatientInfos;
 SELECT * FROM CurrentMedicals;
 SELECT * FROM Nurses;
 SELECT * FROM LabTestsResults;
 SELECT * FROM MedicalHistories;
 SELECT * FROM Doctors;
-SELECT * FROM getInfo;
-SELECT * FROM patientHistory;
-SELECT * FROM runTest;
-SELECT * FROM patientTest;
-SELECT * FROM analyzeOrDiagnose;
+SELECT * FROM getInfos;
+SELECT * FROM patientHistories;
+SELECT * FROM runTests;
+SELECT * FROM patientTests;
+SELECT * FROM analyzeOrDiagnoses;
 
 -- #SELECT * FROM PatientInfo, CurrentMedical, patientCurrent WHERE PatientInfo.patientID = patientCurrent.patientID AND patientCurrent.currMedID = CurrentMedical.currMedID AND PatientInfo.name = "Danielle Reyes";
 -- #patienct current removec

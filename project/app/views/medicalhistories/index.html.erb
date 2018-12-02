@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Medicalhistories</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Dateandtime</th>
+      <th>Medication</th>
+      <th>Diseaseorcondition</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @medicalhistories.each do |medicalhistory| %>
+      <tr>
+        <td><%= medicalhistory.dateAndTime %></td>
+        <td><%= medicalhistory.medication %></td>
+        <td><%= medicalhistory.diseaseOrCondition %></td>
+        <td><%= link_to 'Show', medicalhistory %></td>
+        <td><%= link_to 'Edit', edit_medicalhistory_path(medicalhistory) %></td>
+        <td><%= link_to 'Destroy', medicalhistory, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Medicalhistory', new_medicalhistory_path %>
+<%= link_to 'Back', dashboard_index_path %>

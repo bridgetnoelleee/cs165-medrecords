@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Getinfos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Patientid</th>
+      <th>Nurseid</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @getinfos.each do |getinfo| %>
+      <tr>
+        <td><%= getinfo.patientID %></td>
+        <td><%= getinfo.nurseID %></td>
+        <td><%= link_to 'Show', getinfo %></td>
+        <td><%= link_to 'Edit', edit_getinfo_path(getinfo) %></td>
+        <td><%= link_to 'Destroy', getinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Getinfo', new_getinfo_path %>

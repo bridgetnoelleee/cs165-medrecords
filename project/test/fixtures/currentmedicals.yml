@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  dateCreated: 2018-12-01 03:23:23
+  dateUpdated: 2018-12-01 03:23:23
+  medications: MyText
+  allergies: MyText
+  symptoms: MyText
+  bloodPressure: MyString
+  height: 1
+  weight: 1.5
+
+two:
+  dateCreated: 2018-12-01 03:23:23
+  dateUpdated: 2018-12-01 03:23:23
+  medications: MyText
+  allergies: MyText
+  symptoms: MyText
+  bloodPressure: MyString
+  height: 1
+  weight: 1.5

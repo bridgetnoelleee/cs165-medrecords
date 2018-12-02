@@ -1,0 +1,2 @@
+class Patienthistory < ApplicationRecord
+end

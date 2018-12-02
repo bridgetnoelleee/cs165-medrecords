@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  currMedID: 1
+  name: MyString
+  birthDate: 2018-12-01
+  bloodType: MyString
+  dateCreated: 2018-12-01 03:25:01
+  dateUpdated: 2018-12-01 03:25:01
+  emergencyContact: MyText
+
+two:
+  currMedID: 1
+  name: MyString
+  birthDate: 2018-12-01
+  bloodType: MyString
+  dateCreated: 2018-12-01 03:25:01
+  dateUpdated: 2018-12-01 03:25:01
+  emergencyContact: MyText

@@ -1,0 +1,27 @@
+<%= form_with(model: getinfo, local: true) do |form| %>
+  <% if getinfo.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(getinfo.errors.count, "error") %> prohibited this getinfo from being saved:</h2>
+
+      <ul>
+      <% getinfo.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :patientID %>
+    <%= form.number_field :patientID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :nurseID %>
+    <%= form.number_field :nurseID %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

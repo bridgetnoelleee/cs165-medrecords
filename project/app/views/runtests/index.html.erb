@@ -1,0 +1,32 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Runtests</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nurse ID</th>
+      <th>Test ID</th>
+      <th>Timestamp</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @runtests.each do |runtest| %>
+      <tr>
+        <td><%= runtest.nurseID %></td>
+        <td><%= runtest.testID %></td>
+        <td><%= runtest.dateAndTime %></td>
+        <td><%= link_to 'Show', runtest_path(runtest) %></td>
+        <td><%= link_to 'Edit', edit_runtest_path(runtest) %></td>
+        <td><%= link_to 'Destroy', runtest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Runtest', new_runtest_path %>
+<%= link_to 'Back', dashboard_index_path %>

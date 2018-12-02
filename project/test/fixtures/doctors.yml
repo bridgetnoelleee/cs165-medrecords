@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  docName: MyString
+  specialization: MyString
+  department: MyString
+  fee: 9.99
+  schedule: MyString
+
+two:
+  docName: MyString
+  specialization: MyString
+  department: MyString
+  fee: 9.99
+  schedule: MyString

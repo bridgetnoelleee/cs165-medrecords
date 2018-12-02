@@ -1,0 +1,2 @@
+class Analyzeordiagnose < ApplicationRecord
+end

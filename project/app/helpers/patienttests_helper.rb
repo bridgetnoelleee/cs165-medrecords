@@ -1,0 +1,2 @@
+module PatienttestsHelper
+end

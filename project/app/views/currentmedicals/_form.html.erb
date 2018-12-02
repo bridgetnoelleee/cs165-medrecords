@@ -1,0 +1,57 @@
+<%= form_with(model: currentmedical, local: true) do |form| %>
+  <% if currentmedical.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(currentmedical.errors.count, "error") %> prohibited this currentmedical from being saved:</h2>
+
+      <ul>
+      <% currentmedical.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :dateCreated %>
+    <%= form.datetime_select :dateCreated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dateUpdated %>
+    <%= form.datetime_select :dateUpdated %>
+  </div>
+
+  <div class="field">
+    <%= form.label :medications %>
+    <%= form.text_area :medications %>
+  </div>
+
+  <div class="field">
+    <%= form.label :allergies %>
+    <%= form.text_area :allergies %>
+  </div>
+
+  <div class="field">
+    <%= form.label :symptoms %>
+    <%= form.text_area :symptoms %>
+  </div>
+
+  <div class="field">
+    <%= form.label :bloodPressure %>
+    <%= form.text_field :bloodPressure %>
+  </div>
+
+  <div class="field">
+    <%= form.label :height %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="field">
+    <%= form.label :weight %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

@@ -1112,13 +1112,13 @@
     <table id="280" parent="3" name="LabTestsResults"/>
     <table id="281" parent="3" name="MedicalHistories"/>
     <table id="282" parent="3" name="Nurses"/>
-    <table id="283" parent="3" name="PatientInfo"/>
-    <table id="284" parent="3" name="analyzeOrDiagnose"/>
+    <table id="283" parent="3" name="PatientInfos"/>
+    <table id="284" parent="3" name="analyzeOrDiagnoses"/>
     <table id="285" parent="3" name="ar_internal_metadata"/>
-    <table id="286" parent="3" name="getInfo"/>
-    <table id="287" parent="3" name="patientHistory"/>
-    <table id="288" parent="3" name="patientTest"/>
-    <table id="289" parent="3" name="runTest"/>
+    <table id="286" parent="3" name="getInfos"/>
+    <table id="287" parent="3" name="patientHistories"/>
+    <table id="288" parent="3" name="patientTests"/>
+    <table id="289" parent="3" name="runTests"/>
     <table id="290" parent="3" name="schema_migrations"/>
     <column id="291" parent="278" name="currMedID">
       <Position>1</Position>
@@ -1323,192 +1323,206 @@ dateAndTime</ColNames>
       <DataType>text|0s</DataType>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="330" parent="283" name="currMedID">
+    <column id="330" parent="283" name="nurseID">
+      <Position>9</Position>
+      <DataType>int(11)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="331" parent="283" name="PatientInfos_CurrentMedicals_currMedID_fk">
       <ColNames>currMedID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="331" parent="283" name="PRIMARY">
+    <index id="332" parent="283" name="PatientInfos_Nurses_nurseID_fk">
+      <ColNames>nurseID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="333" parent="283" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>patientID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="332" parent="283" name="patientinfo_ibfk_1">
+    <foreign-key id="334" parent="283" name="PatientInfos_CurrentMedicals_currMedID_fk">
       <ColNames>currMedID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
       <RefTableName>CurrentMedicals</RefTableName>
       <RefColNames>currmedid</RefColNames>
-      <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="333" parent="284" name="doctorID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="334" parent="284" name="medHisID">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="335" parent="284" name="medHisID">
-      <ColNames>medHisID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="336" parent="284" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>doctorID
-medHisID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="337" parent="284" name="analyzeordiagnose_ibfk_1">
-      <ColNames>doctorID</ColNames>
-      <RefSchemaName>medrecords</RefSchemaName>
-      <RefTableName>Doctors</RefTableName>
-      <RefColNames>doctorid</RefColNames>
-    </foreign-key>
-    <foreign-key id="338" parent="284" name="analyzeordiagnose_ibfk_2">
-      <ColNames>medHisID</ColNames>
-      <RefSchemaName>medrecords</RefSchemaName>
-      <RefTableName>MedicalHistories</RefTableName>
-      <RefColNames>medhisid</RefColNames>
-    </foreign-key>
-    <column id="339" parent="285" name="key">
-      <Position>1</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="340" parent="285" name="value">
-      <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="341" parent="285" name="created_at">
-      <Position>3</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="342" parent="285" name="updated_at">
-      <Position>4</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <key id="343" parent="285" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>key</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <column id="344" parent="286" name="patientID">
-      <Position>1</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <column id="345" parent="286" name="nurseID">
-      <Position>2</Position>
-      <DataType>int(11)|0s</DataType>
-      <NotNull>1</NotNull>
-      <ColumnKind>normal</ColumnKind>
-    </column>
-    <index id="346" parent="286" name="nurseID">
-      <ColNames>nurseID</ColNames>
-      <Type>btree</Type>
-    </index>
-    <key id="347" parent="286" name="PRIMARY">
-      <NameSurrogate>1</NameSurrogate>
-      <ColNames>patientID
-nurseID</ColNames>
-      <Primary>1</Primary>
-    </key>
-    <foreign-key id="348" parent="286" name="getinfo_ibfk_1">
-      <ColNames>patientID</ColNames>
-      <RefSchemaName>medrecords</RefSchemaName>
-      <RefTableName>PatientInfo</RefTableName>
-      <RefColNames>patientid</RefColNames>
-      <OnDelete>cascade</OnDelete>
-    </foreign-key>
-    <foreign-key id="349" parent="286" name="getinfo_ibfk_2">
+    <foreign-key id="335" parent="283" name="PatientInfos_Nurses_nurseID_fk">
       <ColNames>nurseID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
       <RefTableName>Nurses</RefTableName>
       <RefColNames>nurseid</RefColNames>
     </foreign-key>
-    <column id="350" parent="287" name="patientID">
+    <column id="336" parent="284" name="doctorID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="351" parent="287" name="medHisID">
+    <column id="337" parent="284" name="medHisID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="352" parent="287" name="medHisID">
+    <index id="338" parent="284" name="analyzeordiagnose_ibfk_2">
       <ColNames>medHisID</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="353" parent="287" name="PRIMARY">
+    <key id="339" parent="284" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
-      <ColNames>patientID
+      <ColNames>doctorID
 medHisID</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="354" parent="287" name="patienthistory_ibfk_1">
-      <ColNames>patientID</ColNames>
+    <foreign-key id="340" parent="284" name="analyzeordiagnose_ibfk_1">
+      <ColNames>doctorID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
-      <RefTableName>PatientInfo</RefTableName>
-      <RefColNames>patientid</RefColNames>
-      <OnDelete>cascade</OnDelete>
+      <RefTableName>Doctors</RefTableName>
+      <RefColNames>doctorid</RefColNames>
     </foreign-key>
-    <foreign-key id="355" parent="287" name="patienthistory_ibfk_2">
+    <foreign-key id="341" parent="284" name="analyzeordiagnose_ibfk_2">
       <ColNames>medHisID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
       <RefTableName>MedicalHistories</RefTableName>
       <RefColNames>medhisid</RefColNames>
     </foreign-key>
-    <column id="356" parent="288" name="patientID">
+    <column id="342" parent="285" name="key">
+      <Position>1</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="343" parent="285" name="value">
+      <Position>2</Position>
+      <DataType>varchar(255)|0s</DataType>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="344" parent="285" name="created_at">
+      <Position>3</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="345" parent="285" name="updated_at">
+      <Position>4</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <key id="346" parent="285" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>key</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="347" parent="286" name="patientID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="357" parent="288" name="testID">
+    <column id="348" parent="286" name="nurseID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="358" parent="288" name="dateAndTime">
+    <index id="349" parent="286" name="getinfo_ibfk_2">
+      <ColNames>nurseID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="350" parent="286" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>patientID
+nurseID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="351" parent="286" name="getinfo_ibfk_1">
+      <ColNames>patientID</ColNames>
+      <RefSchemaName>medrecords</RefSchemaName>
+      <RefTableName>PatientInfos</RefTableName>
+      <RefColNames>patientid</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="352" parent="286" name="getinfo_ibfk_2">
+      <ColNames>nurseID</ColNames>
+      <RefSchemaName>medrecords</RefSchemaName>
+      <RefTableName>Nurses</RefTableName>
+      <RefColNames>nurseid</RefColNames>
+    </foreign-key>
+    <column id="353" parent="287" name="patientID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="354" parent="287" name="medHisID">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <index id="355" parent="287" name="patienthistory_ibfk_2">
+      <ColNames>medHisID</ColNames>
+      <Type>btree</Type>
+    </index>
+    <key id="356" parent="287" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>patientID
+medHisID</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="357" parent="287" name="patienthistory_ibfk_1">
+      <ColNames>patientID</ColNames>
+      <RefSchemaName>medrecords</RefSchemaName>
+      <RefTableName>PatientInfos</RefTableName>
+      <RefColNames>patientid</RefColNames>
+      <OnDelete>cascade</OnDelete>
+    </foreign-key>
+    <foreign-key id="358" parent="287" name="patienthistory_ibfk_2">
+      <ColNames>medHisID</ColNames>
+      <RefSchemaName>medrecords</RefSchemaName>
+      <RefTableName>MedicalHistories</RefTableName>
+      <RefColNames>medhisid</RefColNames>
+    </foreign-key>
+    <column id="359" parent="288" name="patientID">
+      <Position>1</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="360" parent="288" name="testID">
+      <Position>2</Position>
+      <DataType>int(11)|0s</DataType>
+      <NotNull>1</NotNull>
+      <ColumnKind>normal</ColumnKind>
+    </column>
+    <column id="361" parent="288" name="dateAndTime">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="359" parent="288" name="testID">
+    <index id="362" parent="288" name="patienttest_ibfk_2">
       <ColNames>testID
 dateAndTime</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="360" parent="288" name="PRIMARY">
+    <key id="363" parent="288" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>patientID
 testID
 dateAndTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="361" parent="288" name="patienttest_ibfk_1">
+    <foreign-key id="364" parent="288" name="patienttest_ibfk_1">
       <ColNames>patientID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
-      <RefTableName>PatientInfo</RefTableName>
+      <RefTableName>PatientInfos</RefTableName>
       <RefColNames>patientid</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <foreign-key id="362" parent="288" name="patienttest_ibfk_2">
+    <foreign-key id="365" parent="288" name="patienttest_ibfk_2">
       <ColNames>testID
 dateAndTime</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
@@ -1516,43 +1530,43 @@ dateAndTime</ColNames>
       <RefColNames>testid
 dateandtime</RefColNames>
     </foreign-key>
-    <column id="363" parent="289" name="nurseID">
+    <column id="366" parent="289" name="nurseID">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="364" parent="289" name="testID">
+    <column id="367" parent="289" name="testID">
       <Position>2</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <column id="365" parent="289" name="dateAndTime">
+    <column id="368" parent="289" name="dateAndTime">
       <Position>3</Position>
       <DataType>timestamp|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <index id="366" parent="289" name="testID">
+    <index id="369" parent="289" name="runtests_ibfk_2">
       <ColNames>testID
 dateAndTime</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="367" parent="289" name="PRIMARY">
+    <key id="370" parent="289" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>nurseID
 testID
 dateAndTime</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="368" parent="289" name="runtest_ibfk_1">
+    <foreign-key id="371" parent="289" name="runtests_ibfk_1">
       <ColNames>nurseID</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
       <RefTableName>Nurses</RefTableName>
       <RefColNames>nurseid</RefColNames>
     </foreign-key>
-    <foreign-key id="369" parent="289" name="runtest_ibfk_2">
+    <foreign-key id="372" parent="289" name="runtests_ibfk_2">
       <ColNames>testID
 dateAndTime</ColNames>
       <RefSchemaName>medrecords</RefSchemaName>
@@ -1561,13 +1575,13 @@ dateAndTime</ColNames>
 dateandtime</RefColNames>
       <OnDelete>cascade</OnDelete>
     </foreign-key>
-    <column id="370" parent="290" name="version">
+    <column id="373" parent="290" name="version">
       <Position>1</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
       <ColumnKind>normal</ColumnKind>
     </column>
-    <key id="371" parent="290" name="PRIMARY">
+    <key id="374" parent="290" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>version</ColNames>
       <Primary>1</Primary>

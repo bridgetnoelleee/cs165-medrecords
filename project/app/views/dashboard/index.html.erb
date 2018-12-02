@@ -1,10 +1,20 @@
 <h1>Medical Records</h1>
 
-<%#= link_to 'New Lab Test Result', new_labtestsresult_path %>
 <li><%= link_to 'Lab Test Results', labtestsresults_path%></li>
 <li><%= link_to 'Med Doctors', doctors_path%></li>
+<li><%= link_to 'Analysis', analyzeordiagnoses_path%></li>
 <li><%= link_to 'Nurses', nurses_path%></li>
+<li><%= link_to 'Ran tests', runtests_path%></li>
 
 <br>Related to Patient<br>
+<li><%= link_to 'Patients', patientinfos_path %></li>
+<li><%= link_to 'Patient Tests', patienttests_path %></li>
 <li><%= link_to 'Current Medical', currentmedicals_path%></li>
 <li><%= link_to 'Medical History', medicalhistories_path%></li>
+<li><%= link_to 'Patient History', patienthistories_path%></li>
+
+
+<!--In replacement for getInfo table-->
+<!--Added nurseID to patientInfo to indicate nurse who entered the patient's information-->
+<!--<li><%#= link_to 'Info', getinfos_path%></li>-->
+<%= render 'layouts/footer' %>

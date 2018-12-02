@@ -1,0 +1,34 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Lab Test Results</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Test ID </th>
+      <th>Timestamp</th>
+      <th>Test Name </th>
+      <th>Test Results</th>
+      <th colspan="100"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @labtestsresults.each do |labtestsresult| %>
+      <tr>
+        <td><%= labtestsresult.testID %></td>
+        <td><%= labtestsresult.dateAndTime %></td>
+        <td><%= labtestsresult.testName %></td>
+        <td><%= labtestsresult.testResults %></td>
+<!--        <td><%#= link_to 'Show', labtestsresult %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_labtestsresult_path(labtestsresult) %></td>-->
+<!--        <td><%#= link_to 'Destroy', labtestsresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Lab Test Result', new_labtestsresult_path %>
+<%= link_to 'Back', dashboard_index_path %>

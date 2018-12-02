@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nurseid:</strong>
+  <%= @runtest.nurseID %>
+</p>
+
+<p>
+  <strong>Testid:</strong>
+  <%= @runtest.testID %>
+</p>
+
+<p>
+  <strong>Dateandtime:</strong>
+  <%= @runtest.dateAndTime %>
+</p>
+
+<%= link_to 'Edit', edit_runtest_path(@runtest) %> |
+<%= link_to 'Back', runtests_path %>

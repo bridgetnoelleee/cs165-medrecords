@@ -1,0 +1,11 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  nurseID: 1
+  testID: 1
+  dateAndTime: 2018-12-01 03:25:03
+
+two:
+  nurseID: 1
+  testID: 1
+  dateAndTime: 2018-12-01 03:25:03

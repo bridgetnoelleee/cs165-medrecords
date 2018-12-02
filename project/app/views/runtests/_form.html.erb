@@ -1,0 +1,32 @@
+<%= form_with(model: runtest, local: true) do |form| %>
+  <% if runtest.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(runtest.errors.count, "error") %> prohibited this runtest from being saved:</h2>
+
+      <ul>
+      <% runtest.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :nurseID %>
+    <%= form.number_field :nurseID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :testID %>
+    <%= form.number_field :testID %>
+  </div>
+
+  <div class="field">
+    <%= form.label :dateAndTime %>
+    <%= form.datetime_select :dateAndTime %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

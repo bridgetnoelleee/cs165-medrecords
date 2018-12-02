@@ -1,0 +1,39 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Currmedid:</strong>
+  <%= @patientinfo.currMedID %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @patientinfo.name %>
+</p>
+
+<p>
+  <strong>Birthdate:</strong>
+  <%= @patientinfo.birthDate %>
+</p>
+
+<p>
+  <strong>Bloodtype:</strong>
+  <%= @patientinfo.bloodType %>
+</p>
+
+<p>
+  <strong>Datecreated:</strong>
+  <%= @patientinfo.dateCreated %>
+</p>
+
+<p>
+  <strong>Dateupdated:</strong>
+  <%= @patientinfo.dateUpdated %>
+</p>
+
+<p>
+  <strong>Emergencycontact:</strong>
+  <%= @patientinfo.emergencyContact %>
+</p>
+
+<%= link_to 'Edit', edit_patientinfo_path(@patientinfo) %> |
+<%= link_to 'Back', patientinfos_path %>

@@ -1,0 +1,2 @@
+class Currentmedical < ApplicationRecord
+end

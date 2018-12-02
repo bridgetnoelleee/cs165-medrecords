@@ -1,0 +1,29 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Analyzeordiagnoses</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Doctor ID</th>
+      <th>Medical History ID</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @analyzeordiagnoses.each do |analyzeordiagnosis| %>
+      <tr>
+        <td><%= analyzeordiagnosis.doctorID %></td>
+        <td><%= analyzeordiagnosis.medHisID %></td>
+        <td><%= link_to 'Show', analyzeordiagnosis %></td>
+        <td><%= link_to 'Edit', edit_analyzeordiagnosis_path(analyzeordiagnosis) %></td>
+        <td><%= link_to 'Destroy', analyzeordiagnosis, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Analyzeordiagnosis', new_analyzeordiagnosis_path %>

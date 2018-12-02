@@ -1,0 +1,2 @@
+class Patienttest < ApplicationRecord
+end

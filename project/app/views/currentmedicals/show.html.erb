@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Datecreated:</strong>
+  <%= @currentmedical.dateCreated %>
+</p>
+
+<p>
+  <strong>Dateupdated:</strong>
+  <%= @currentmedical.dateUpdated %>
+</p>
+
+<p>
+  <strong>Medications:</strong>
+  <%= @currentmedical.medications %>
+</p>
+
+<p>
+  <strong>Allergies:</strong>
+  <%= @currentmedical.allergies %>
+</p>
+
+<p>
+  <strong>Symptoms:</strong>
+  <%= @currentmedical.symptoms %>
+</p>
+
+<p>
+  <strong>Bloodpressure:</strong>
+  <%= @currentmedical.bloodPressure %>
+</p>
+
+<p>
+  <strong>Height:</strong>
+  <%= @currentmedical.height %>
+</p>
+
+<p>
+  <strong>Weight:</strong>
+  <%= @currentmedical.weight %>
+</p>
+
+<%= link_to 'Edit', edit_currentmedical_path(@currentmedical) %> |
+<%= link_to 'Back', currentmedicals_path %>
