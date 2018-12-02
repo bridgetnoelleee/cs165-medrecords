@@ -1,14 +1,31 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nurse: </strong>
-  <%= @nurse.nurseName %>
-</p>
+<br>
+<div class="ui raised padded container segment">
 
-<p>
-  <strong>Department: </strong>
-  <%= @nurse.department %>
-</p>
 
-<%= link_to 'Edit', edit_nurse_path(@nurse) %> |
-<%= link_to 'Back', nurses_path %>
+<div class="content">
+  <h3 class="ui black inverted segment header">
+    <button class="ui black icon button"><i class="angle left icon">
+    </i><%= link_to "-", nurses_path %>
+    </button>
+
+    <%= @nurse.nurseName %>
+    (ID#:<%= @nurse.nurseID %>)
+  </h3>
+
+  <div class="ui hidden divider">Information
+    <button class="ui mini white basic button"><%= link_to 'Edit', edit_nurse_path(@nurse)%></i>
+    </button></div><br>
+
+  <li>
+    <strong>Nurse: </strong>
+    <%= @nurse.nurseName %>
+  </li>
+
+  <li>
+    <strong>Department: </strong>
+    <%= @nurse.department %>
+  </li>
+</div>
+</div>

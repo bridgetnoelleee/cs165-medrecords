@@ -1,29 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Docname:</strong>
-  <%= @doctor.docName %>
-</p>
+<br>
+<div class="ui raised padded container segment">
 
-<p>
-  <strong>Specialization:</strong>
-  <%= @doctor.specialization %>
-</p>
 
-<p>
-  <strong>Department:</strong>
-  <%= @doctor.department %>
-</p>
+  <div class="content">
+    <h3 class="ui black inverted segment header">
+      <button class="ui black icon button"><i class="angle left icon">
+      </i><%= link_to "-", doctors_path %>
+      </button>
 
-<p>
-  <strong>Fee:</strong>
-  <%= @doctor.fee %>
-</p>
+      <%= @doctor.docName %>
+      (ID#:<%= @doctor.doctorID %>)
+    </h3>
 
-<p>
-  <strong>Schedule:</strong>
-  <%= @doctor.schedule %>
-</p>
+    <div class="ui hidden divider">Information
+      <button class="ui mini white basic button"><%= link_to 'Edit', edit_doctor_path(@doctor)%></i>
+      </button></div><br>
 
-<%= link_to 'Edit', edit_doctor_path(@doctor) %> |
-<%= link_to 'Back', doctors_path %>
+    <li>
+      <strong>Docname:</strong>
+      <%= @doctor.docName %>
+    </li>
+
+    <li>
+      <strong>Specialization:</strong>
+      <%= @doctor.specialization %>
+    </li>
+
+    <li>
+      <strong>Department:</strong>
+      <%= @doctor.department %>
+    </li>
+
+    <li>
+      <strong>Fee:</strong>
+      <%= @doctor.fee %>
+    </li>
+
+    <li>
+      <strong>Schedule:</strong>
+      <%= @doctor.schedule %>
+    </li>
+
+  </div>
+</div>
