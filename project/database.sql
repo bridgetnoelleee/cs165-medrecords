@@ -109,6 +109,7 @@ CREATE TABLE patientTests (
   patientTestID   INT NOT NULL AUTO_INCREMENT,
   patientID       INT,
   testID          INT,
+  dateAndTime     TIMESTAMP,
 
   PRIMARY KEY (patientTestID),
   FOREIGN KEY (patientID) REFERENCES PatientInfos (patientID)
@@ -171,8 +172,8 @@ INSERT INTO runTests VALUES
   (2, 123, 555, CURRENT_TIMESTAMP);
 
 INSERT INTO patientTests VALUES
-  (1, 123, 010),
-  (2, 456, 555);
+  (1, 123, 010, CURRENT_TIMESTAMP),
+  (2, 456, 555, CURRENT_TIMESTAMP);
 
 INSERT INTO analyzeOrDiagnoses VALUES
   (1, 9999, 12345),
@@ -182,7 +183,7 @@ SELECT * FROM PatientInfos;
 SELECT * FROM CurrentMedicals;
 SELECT * FROM Nurses;
 SELECT * FROM LabTestsResults;
-SELECT * FROM MedicalHistoryies;
+SELECT * FROM MedicalHistories;
 SELECT * FROM Doctors;
 SELECT * FROM patientHistories;
 SELECT * FROM runTests;
