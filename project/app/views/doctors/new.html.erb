@@ -1,5 +1,8 @@
-<h1>New Doctor</h1>
+<br>
+<div class="ui raised text container segment">
+  <h2 class="ui header">New Doctor</h2>
+  <%= render 'form', doctor: @doctor %>
+</div>
 
-<%= render 'form', doctor: @doctor %>
-
+<%= render 'layouts/footer' %>
 <%= link_to 'Back', doctors_path %>

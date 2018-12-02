@@ -1,15 +1,20 @@
 <p id="notice"><%= notice %></p>
 
+<div class="ui padded raised text container segment">
 <h1>Lab Test Results</h1>
 
-<table>
+  <div class="actions">
+    <button class="positive ui button"><%= link_to 'New Lab Test Result', new_labtestsresult_path %></button>
+    <button class="ui button"><%=link_to 'Back', dashboard_index_path %></button>
+  </div>
+
+  <table class="ui celled table">
   <thead>
     <tr>
       <th>Test ID </th>
       <th>Timestamp</th>
       <th>Test Name </th>
       <th>Test Results</th>
-      <th colspan="100"></th>
     </tr>
   </thead>
 
@@ -30,5 +35,5 @@
 
 <br>
 
-<%= link_to 'New Lab Test Result', new_labtestsresult_path %>
-<%= link_to 'Back', dashboard_index_path %>
+
+</div>

@@ -1,57 +1,62 @@
 <%= form_with(model: patientinfo, local: true) do |form| %>
   <% if patientinfo.errors.any? %>
     <div id="error_explanation">
-      <h2><%= pluralize(patientinfo.errors.count, "error") %> prohibited this patientinfo from being saved:</h2>
+      <h2><%= pluralize(patientinfo.errors.count, "error") %> prohibited this patient from being saved:</h2>
 
       <ul>
-      <% patientinfo.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
+        <% patientinfo.errors.full_messages.each do |message| %>
+          <li><%= message %></li>
+        <% end %>
       </ul>
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :currMedID %>
-    <%= form.number_field :currMedID %>
-  </div>
+<!--  <div class="field">-->
+    <%#= form.label :currMedID %>
+    <%#= form.number_field :currMedID %>
+<!--  </div>-->
 
-  <div class="field">
+<div class = "ui form">
+  <div class="required field">
     <%= form.label :name %>
     <%= form.text_field :name %>
   </div>
 
-  <div class="field">
-    <%= form.label :birthDate %>
+  <div class="required field">
+    <%= form.label :"Birth date" %>
     <%= form.date_select :birthDate %>
   </div>
 
-  <div class="field">
-    <%= form.label :bloodType %>
+  <div class="required field">
+    <%= form.label :"Blood type" %>
     <%= form.text_field :bloodType %>
   </div>
 
-  <div class="field">
-    <%= form.label :dateCreated %>
+  <div class="required field">
+    <%= form.label :"Date (created)" %>
     <%= form.datetime_select :dateCreated %>
-  </div>
+    </div>
 
-  <div class="field">
-    <%= form.label :dateUpdated %>
+  <div class="required field">
+    <%= form.label :"Date (updated)" %>
     <%= form.datetime_select :dateUpdated %>
   </div>
 
-  <div class="field">
+  <div class="required field">
     <%= form.label :emergencyContact %>
     <%= form.text_area :emergencyContact %>
   </div>
 
-  <div class="field">
-    <%= form.label :"Entered by nurse" %>
+  <div class="required field">
+    <%= form.label :"Entered/updated by nurse" %>
     <%= form.text_field :nurseID %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
 <% end %>
+
+<div class="actions">
+  <button class="ui button"><%=link_to 'Back', patientinfos_path %></button>
+  <button class="ui positive button" type="submit">Submit</button>
+</div>
+
+</div>

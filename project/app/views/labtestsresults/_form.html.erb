@@ -11,27 +11,31 @@
     </div>
   <% end %>
 
+
+<div class = "ui form">
   <div class="field">
-    <%= form.label :testID %>
+    <%= form.label :"Test ID" %>
     <%= form.number_field :testID %>
   </div>
 
-  <div class="field">
-    <%= form.label :dateAndTime %>
+  <div class="ui required field">
+    <%= form.label :"Timestamp" %>
     <%= form.datetime_select :dateAndTime %>
   </div>
 
-  <div class="field">
-    <%= form.label :testName %>
+  <div class="ui required field">
+    <%= form.label :"Test name" %>
     <%= form.text_field :testName %>
   </div>
 
-  <div class="field">
-    <%= form.label :testResults %>
+  <div class="ui required field">
+    <%= form.label :"Results" %>
     <%= form.text_area :testResults %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <button class="ui button"><%=link_to 'Back', labtestsresults_path %></button>
+    <button class="ui positive button" type="submit">Submit</button>
   </div>
 <% end %>
+</div>

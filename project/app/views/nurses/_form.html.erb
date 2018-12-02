@@ -11,17 +11,27 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :"Nurse name" %>
-    <%= form.text_field :nurseName %>
+<div class = "ui form">
+  <div class="ui required field">
+    <%= form.label :"ID" %>
+    <%= form.text_field :nurseID %>
   </div>
 
-  <div class="field">
+    <div class="ui required field">
+    <%= form.label :"Name" %>
+    <%= form.text_field :nurseName %>
+    </div>
+
+    <div class="ui required field">
     <%= form.label :department %>
     <%= form.text_field :department %>
-  </div>
+    </div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
-<% end %>
+    <%#= form.submit %>
+      <div class="actions">
+        <button class="ui button"><%=link_to 'Back', nurses_path %></button>
+        <button class="ui primary button" type="submit">Submit</button>
+      </div>
+    <% end %>
+
+</div>

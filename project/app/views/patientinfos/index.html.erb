@@ -1,42 +1,47 @@
 <p id="notice"><%= notice %></p>
 
-<h1>PatientInfos</h1>
+<div class="ui padded raised container segment">
+<h1>Patients</h1>
 
-<table>
+<table class="ui fixed selectable table">
+
+  <div class="actions">
+    <button class="positive ui button"><%= link_to 'New Patient', new_patientinfo_path %></button>
+    <button class="ui button"><%= link_to 'Back', dashboard_index_path %></button>
+  </div>
+
   <thead>
     <tr>
-      <th>Currmedid</th>
+      <th>Medical ID</th>
       <th>Name</th>
       <th>Birthdate</th>
       <th>Bloodtype</th>
-      <th>Datecreated</th>
-      <th>Dateupdated</th>
-      <th>Emergencycontact</th>
-      <th>Entered by Nurse</th>
-      <th colspan="3"></th>
+      <th>Emergency Contact</th>
+      <th>Date Created</th>
+      <th>Date Updated</th>
+      <th>Nurse</th>
     </tr>
   </thead>
 
   <tbody>
     <% @patientinfos.each do |patientinfo| %>
       <tr>
-        <td><%= patientinfo.currMedID %></td>
+        <td class="selectable">
+<!--          <a href=/patientinfos(.:format)><%#= patientinfo.currMedID %></a>-->
+          <%= link_to patientinfo.currMedID, patientinfo %>
+        </td>
+<!--        <td><%#= patientinfo.currMedID %></td>-->
         <td><%= patientinfo.name %></td>
         <td><%= patientinfo.birthDate %></td>
         <td><%= patientinfo.bloodType %></td>
+        <td><%= patientinfo.emergencyContact %></td>
         <td><%= patientinfo.dateCreated %></td>
         <td><%= patientinfo.dateUpdated %></td>
-        <td><%= patientinfo.emergencyContact %></td>
-        <td><%= patientinfo.nurseID %></td>
-        <td><%= link_to 'Show', patientinfo %></td>
-        <td><%= link_to 'Edit', edit_patientinfo_path(patientinfo) %></td>
-        <td><%= link_to 'Destroy', patientinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= Nurse.find(patientinfo.nurseID).nurseName %></td>
+<!--        <td><%#= link_to 'Edit', edit_patientinfo_path(patientinfo) %></td>-->
       </tr>
     <% end %>
   </tbody>
 </table>
-
+</div>
 <br>
-
-<%= link_to 'New Patientinfo', new_patientinfo_path %>
-<%= link_to 'Back', dashboard_index_path %>

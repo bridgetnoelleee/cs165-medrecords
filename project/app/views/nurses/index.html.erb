@@ -1,31 +1,36 @@
 <p id="notice"><%= notice %></p>
+<br>
+<div class="ui padded raised text container segment">
+  <h1>Nurses</h1>
 
-<h1>Nurses</h1>
+  <div class="actions">
+    <button class="positive ui button"><%= link_to 'New Nurse', new_nurse_path %></button>
+    <button class="ui button"><%=link_to 'Back', dashboard_index_path %></button>
+  </div>
 
-<table>
-  <thead>
-    <tr>
+  <table class="ui celled table">
+    <thead>
+      <tr>
       <th>Name</th>
       <th>Department</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @nurses.each do |nurse| %>
-      <tr>
-        <td><%= nurse.nurseName %></td>
-        <td><%= nurse.department %></td>
-        <td><%= link_to 'Show', nurse %></td>
-        <td><%= link_to 'Edit', edit_nurse_path(nurse) %></td>
-        <td><%= link_to 'Destroy', nurse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+<!--    <th colspan="3"></th>-->
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @nurses.each do |nurse| %>
+      <tr>
+      <td><%= nurse.nurseName %></td>
+      <td><%= nurse.department %></td>
+<!--      <td><%#= link_to 'Show', nurse %></td>-->
+<!--      <td><%#= link_to 'Edit', edit_nurse_path(nurse) %></td>-->
+<!--      <td><%#= link_to 'Destroy', nurse, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+      </tr>
+      <% end %>
+    </tbody>
+  </table>
+
+</div>
 <br>
 
-<%= link_to 'New Nurse', new_nurse_path %>
-<%= link_to 'Back', dashboard_index_path %>
 <%= render 'layouts/footer' %>

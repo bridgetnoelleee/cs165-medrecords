@@ -7,6 +7,10 @@ class CurrentmedicalsController < ApplicationController
     @currentmedicals = Currentmedical.all
   end
 
+  def get
+    @currentmedical = Currentmedical.where(id: params[:ids])
+  end
+
   # GET /currentmedicals/1
   # GET /currentmedicals/1.json
   def show

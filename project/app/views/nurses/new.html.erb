@@ -1,5 +1,7 @@
-<h1>Add New Nurse</h1>
+<br>
+<div class="ui raised text container segment">
+  <h2 class="ui header">New Nurse</h2>
+  <%= render 'form', nurse: @nurse %>
+</div>
 
-<%= render 'form', nurse: @nurse %>
-<%= link_to 'Back', nurses_path %>
 <%= render 'layouts/footer' %>

@@ -1,39 +1,109 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Currmedid:</strong>
-  <%= @patientinfo.currMedID %>
-</p>
+<br>
+<div class="ui raised padded container segment">
 
-<p>
-  <strong>Name:</strong>
-  <%= @patientinfo.name %>
-</p>
+<div class="content">
+  <h3 class="ui black inverted segment header"><%= @patientinfo.name %></h3>
 
-<p>
-  <strong>Birthdate:</strong>
-  <%= @patientinfo.birthDate %>
-</p>
+  <div class="ui hidden divider">Personal Information</div>
+  <li>
+    <strong>Birthdate:</strong>
+    <%= @patientinfo.birthDate %>
+  </li>
 
-<p>
-  <strong>Bloodtype:</strong>
-  <%= @patientinfo.bloodType %>
-</p>
+  <li>
+    <strong>Bloodtype:</strong>
+    <%= @patientinfo.bloodType %>
+  </li>
 
-<p>
-  <strong>Datecreated:</strong>
-  <%= @patientinfo.dateCreated %>
-</p>
+  <li>
+    <strong>Emergency Contact:</strong>
+    <%= @patientinfo.emergencyContact %>
+  </li>
 
-<p>
-  <strong>Dateupdated:</strong>
-  <%= @patientinfo.dateUpdated %>
-</p>
+  <li>
+    <strong>Date Created:</strong>
+    <%= @patientinfo.dateCreated %>
+  </li>
 
-<p>
-  <strong>Emergencycontact:</strong>
-  <%= @patientinfo.emergencyContact %>
-</p>
+  <li>
+    <strong>Date Updated:</strong>
+    <%= @patientinfo.dateUpdated %>
+  </li>
 
-<%= link_to 'Edit', edit_patientinfo_path(@patientinfo) %> |
+  <li>
+    <strong>Nurse responsible:</strong>
+    <%= @patientinfo.nurseID %>
+  </li>
+
+  <div class="ui section divider"></div>
+  <div class="ui hidden divider">Medical Information</div>
+  <p>
+  <li>
+    <strong>Current Medical ID:</strong>
+    <%= @patientinfo.currMedID %>
+  </li>
+    <li>
+      <strong>Height:</strong>
+      <%= Currentmedical.find(@patientinfo.currMedID).height %>
+    </li>
+
+    <li>
+      <strong>Weight</strong>
+      <%= Currentmedical.find(@patientinfo.currMedID).weight %>
+    </li>
+
+    <li>
+      <strong>Allergies:</strong>
+      <%= Currentmedical.find(@patientinfo.currMedID).allergies %>
+    </li>
+
+    <li>
+      <strong>Blood Pressure</strong>
+      <%= Currentmedical.find(@patientinfo.currMedID).bloodPressure %>
+    </li>
+
+    <li>
+      <strong>Symptoms</strong>
+      <%= Currentmedical.find(@patientinfo.currMedID).symptoms %>
+    </li>
+
+  <li>
+    <strong>Medications</strong>
+    <%= Currentmedical.find(@patientinfo.currMedID).medications %>
+  </li>
+
+  <li>
+    <strong>Date Created</strong>
+    <%= Currentmedical.find(@patientinfo.currMedID).dateCreated %>
+  </li>
+
+  <li>
+    <strong>Date Updated</strong>
+    <%= Currentmedical.find(@patientinfo.currMedID).dateUpdated %>
+  </li>
+
+  <div class="ui section divider"></div>
+  <div class="ui hidden divider">Medical History</div>
+  <li>
+    <strong>Medical History ID:</strong>
+    <%= @patientinfo.currMedID %>
+  </li>
+  <li>
+    <strong>Height:</strong>
+    <%= Currentmedical.find(@patientinfo.currMedID).height %>
+  </li>
+
+  <%# Patienthistories.find(@patientinfo.patientID).each do |medhistory| %>
+        <%#= link_to patientinfo.currMedID, patientinfo %>
+      <%#= Medicalhistories.find(medhistory.medHisID).medication %>
+
+  <%# end %>
+  <% Patienthistories.find(@patientinfo.patientID)%>
+
+
+</div>
+
+<!--<%#= link_to 'Edit', edit_patientinfo_path(@patientinfo) %> |-->
 <%= link_to 'Back', patientinfos_path %>
