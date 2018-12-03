@@ -94,7 +94,7 @@
 
   <div class="ui section divider"></div>
   <div class="ui hidden divider">Medical History</div>
-    <% Patienthistory.where(patientID=params[:id]).each do |patient| %>
+    <% Patienthistory.where(@patientinfo.patientID==params[:id]).each do |patient| %>
       <% Medicalhistory.where(medHisID:patient.medHisID).each do |history| %>
       <li>
         <strong>Medical History ID: </strong>

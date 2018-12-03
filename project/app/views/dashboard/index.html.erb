@@ -1,7 +1,7 @@
 <div class="ui very padded inverted vertical masthead center aligned segment" id="index">
 
   <h1 class="ui center aligned blue icon header">
-    <i class="circular blue users icon"></i>
+    <i class="circular hospital icon"></i>
     Medical Record
   </h1>
   <div class="ui hidden divider"></div>
@@ -10,31 +10,18 @@
     <p>Its goal is to eliminate the full dependence of physical copies of records which is a hassle to organize and slow to inform. </p>
   </div>
 
-  <!--<h1>Medical Records</h1>-->
-
-<!--<li><%#= link_to 'Lab Test Results', labtestsresults_path%></li>-->
-<!--<li><%#= link_to 'Med Doctors', doctors_path%></li>-->
-<!--<li><%#= link_to 'Analysis', analyzeordiagnoses_path%></li>-->
-<!--<li><%#= link_to 'Nurses', nurses_path%></li>-->
-<!--<li><%#= link_to 'Ran tests', runtests_path%></li>-->
-
-<!--<br>Related to Patient<br>-->
-<!--<li><%#= link_to 'Patients', patientinfos_path %></li>-->
-<!--<li><%#= link_to 'Patient Tests', patienttests_path %></li>-->
-<!--<li><%#= link_to 'Current Medical', currentmedicals_path%></li>-->
-<!--<li><%#= link_to 'Medical History', medicalhistories_path%></li>-->
-<!--<li><%#= link_to 'Patient History', patienthistories_path%></li>-->
-
-</div>
+  <br>
+  <br>
 </div>
 
-<br>
+<div class="ui hidden divider"></div>
+
 <div class="ui two column double stackable grid container">
 
   <div class="column">
     <div class="ui centered blue card">
       <div class="content">
-        <div class="header">Patients</div>
+        <div class="header"><i class="user icon">&nbsp;&nbsp;Patients</i></div>
       </div>
       <div class="content">
         <li><%= link_to 'Patients', patientinfos_path %></li>
@@ -49,7 +36,7 @@
   <div class="column">
     <div class="ui centered blue card">
       <div class="content">
-        <div class="header">Others</div>
+        <div class="header"><i class="user md icon">&nbsp;&nbsp;Staff</i></div>
       </div>
       <div class="content">
         <li><%= link_to 'Doctors', doctors_path%></li>
@@ -60,7 +47,6 @@
       </div>
     </div>
   </div>
-
 
 <!--In replacement for getInfo table-->
 <!--Added nurseID to patientInfo to indicate nurse who entered the patient's information-->
