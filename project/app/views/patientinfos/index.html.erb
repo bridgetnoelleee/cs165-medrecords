@@ -3,7 +3,7 @@
 <div class="ui padded raised container segment">
 <h1>Patients</h1>
 
-<table class="ui fixed selectable celled table">
+<table class="ui selectable table">
 
   <div class="actions">
     <%= link_to 'New Patient', new_patientinfo_path, {class: "positive ui button"} %>
@@ -35,7 +35,7 @@
         <td><%= patientinfo.dateUpdated %></td>
         <td><%= Nurse.find(patientinfo.nurseID).nurseName %></td>
 <!--        <td><%#= link_to 'Edit', edit_patientinfo_path(patientinfo) %></td>-->
-        <td><%= link_to 'Destroy', patientinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', patientinfo, method: :delete, data: { confirm: 'Are you sure?' } %></td>
 
       </tr>
     <% end %>

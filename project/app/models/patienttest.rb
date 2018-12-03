@@ -1,4 +1,4 @@
 class Patienttest < ApplicationRecord
-  belongs_to :patientinfo
-  belongs_to :labtestsresult
+  belongs_to :patientinfo, :optional => true
+  belongs_to :labtestsresult, :optional => true
 end

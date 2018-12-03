@@ -8,7 +8,7 @@
     <%=link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
-  <table class="ui celled selectable table">
+  <table class="ui selectable table">
     <thead>
       <tr>
       <th>Name</th>
@@ -28,7 +28,7 @@
 <!--      <td><%#= nurse.nurseName %></td>-->
       <td class="selectable"><%= link_to nurse.department, nurse %></td>
 <!--      <td><%#= link_to 'Show', nurse %></td>-->
-      <td><%= link_to 'Destroy', nurse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <td><%= link_to 'Delete', nurse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
       <% end %>
     </tbody>

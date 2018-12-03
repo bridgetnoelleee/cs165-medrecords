@@ -8,7 +8,7 @@
     <%= link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
-  <table class="ui celled table">
+  <table class="ui selectable table">
   <thead>
     <tr>
       <th>Test ID</th>
@@ -23,13 +23,13 @@
   <tbody>
     <% @labtestsresults.each do |labtestsresult| %>
       <tr>
-        <td><%= labtestsresult.testID %></td>
+        <td class="selectable"><%= link_to labtestsresult.testID, labtestsresult%></td>
         <td><%= labtestsresult.dateAndTime %></td>
         <td><%= labtestsresult.testName %></td>
         <td><%= labtestsresult.testResults %></td>
 <!--        <td><%#= link_to 'Show', labtestsresult %></td>-->
 <!--        <td><%#= link_to 'Edit', edit_labtestsresult_path(labtestsresult) %></td>-->
-        <td><%= link_to 'Destroy', labtestsresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', labtestsresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

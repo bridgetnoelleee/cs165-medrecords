@@ -8,10 +8,11 @@
     <%=link_to 'Back', dashboard_index_path , {class: "ui button"}%>
   </div>
 
-<table class="ui selectable celled table">
+<table class="ui selectable table">
   <thead>
     <tr>
       <th>Patient</th>
+      <th>Test ID</th>
       <th>Test</th>
       <th>Timestamp</th>
       <th>Delete</th>
@@ -21,13 +22,15 @@
   <tbody>
     <% @patienttests.each do |patienttest| %>
       <tr>
-        <td class="selectable"><%= link_to Patientinfo.find(patienttest.patientID).name, edit_patienttest_path(patienttest) %></td>
+        <td class="selectable"><%= link_to Patientinfo.find(patienttest.patientID).name, patienttest%></td>
 <!--        <td><%#= Patientinfo.find(patienttest.patientID).name %></td>-->
+        <td><%= patienttest.testID %></td>
         <td><%= Labtestsresult.find(patienttest.testID).testName %></td>
+
         <td><%= patienttest.dateAndTime %></td>
 <!--        <td><%#= link_to 'Show', patienttest %></td>-->
 <!--        <td><%#= link_to 'Edit', edit_patienttest_path(patienttest) %></td>-->
-        <td><%= link_to 'Destroy', patienttest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Delete', patienttest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

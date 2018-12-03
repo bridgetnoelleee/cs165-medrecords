@@ -1,19 +1,35 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Patientid:</strong>
-  <%= @patienttest.patientID %>
-</p>
+<br>
+<div class="ui raised padded container segment">
 
-<p>
-  <strong>Testid:</strong>
-  <%= @patienttest.testID %>
-</p>
 
-<p>
-  <strong>Dateandtime:</strong>
-  <%= @patienttest.dateAndTime %>
-</p>
+  <div class="content">
+    <h3 class="ui black inverted segment header">
+      <%= link_to patienttests_path, {class: "ui black icon button"} do %>
+        <i class="angle left icon"></i>
+      <% end %>
 
-<%= link_to 'Edit', edit_patienttest_path(@patienttest) %> |
-<%= link_to 'Back', patienttests_path %>
+<!--      <%#= Patientinfo.find(@patienttest.patientID).name %>&nbsp;-->
+      ID#:<%= @patienttest.patientTestID %>
+    </h3>
+
+    <div class="ui hidden divider">Information
+      <%= link_to 'Edit', edit_patienttest_path(@patienttest), {class: "ui mini white basic button"}%>
+    </div><br>
+
+    <p>
+      <strong>Patient:</strong>
+      <%= Patientinfo.find(@patienttest.patientID).name %>
+    </p>
+
+    <p>
+      <strong>Test:</strong>
+      <%= Labtestsresult.find(@patienttest.testID).testName %>
+    </p>
+
+    <p>
+      <strong>Timestamp:</strong>
+      <%= @patienttest.dateAndTime %>
+
+  </div>

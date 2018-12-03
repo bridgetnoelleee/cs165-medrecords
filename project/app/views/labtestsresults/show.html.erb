@@ -1,24 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Testid:</strong>
-  <%= @labtestsresult.testID %>
-</p>
+<br>
+<div class="ui raised padded container segment">
 
-<p>
-  <strong>Dateandtime:</strong>
+
+<div class="content">
+  <h3 class="ui black inverted segment header">
+    <%= link_to labtestsresults_path, {class: "ui black icon button"} do %>
+      <i class="angle left icon"></i>
+    <% end %>
+
+    <%= @labtestsresult.testName %>&nbsp;
+    (ID#:<%= @labtestsresult.testID %>)
+  </h3>
+
+  <div class="ui hidden divider">Information
+    <%= link_to 'Edit', edit_labtestsresult_path(@labtestsresult), {class: "ui mini white basic button"}%>
+  </div><br>
+
+
+  <p>
+  <strong>Timestamp:</strong>
   <%= @labtestsresult.dateAndTime %>
 </p>
 
 <p>
-  <strong>Testname:</strong>
-  <%= @labtestsresult.testName %>
-</p>
-
-<p>
-  <strong>Testresults:</strong>
+  <strong>Test Results:</strong>
   <%= @labtestsresult.testResults %>
 </p>
 
-<%= link_to 'Edit', edit_labtestsresult_path(@labtestsresult) %> |
-<%= link_to 'Back', labtestsresults_path %>
+</div>

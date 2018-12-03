@@ -14,12 +14,15 @@
 <div class="ui form">
   <div class="ui required field">
     <%= form.label :"Patient ID" %>
-    <%= form.number_field :patientID %>
+    <%#= form.number_field :patientID %>
+    <%= form.select :patientID, options_for_select(Patientinfo.all.map{|s|[s.name, s.patientID]}) %>
+
   </div>
 
   <div class="ui required field">
     <%= form.label :"Test ID" %>
-    <%= form.number_field :testID %>
+    <%#= form.number_field :testID %>
+    <%= form.select :testID, options_for_select(Labtestsresult.all.map{|s|[s.testName, s.testID]}) %>
   </div>
 
   <div class="ui required field">
