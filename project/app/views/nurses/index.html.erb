@@ -4,11 +4,11 @@
   <h1>Nurses</h1>
 
   <div class="actions">
-    <button class="positive ui button"><%= link_to 'New Nurse', new_nurse_path %></button>
-    <button class="ui button"><%=link_to 'Back', dashboard_index_path %></button>
+    <%= link_to 'New Nurse', new_nurse_path, {class:"positive ui button new-button"} %>
+    <%=link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
-  <table class="ui celled inverted table">
+  <table class="ui celled selectable table">
     <thead>
       <tr>
       <th>Name</th>
@@ -26,7 +26,7 @@
           <%= link_to nurse.nurseName, nurse %>
         </td>
 <!--      <td><%#= nurse.nurseName %></td>-->
-      <td><%= nurse.department %></td>
+      <td class="selectable"><%= link_to nurse.department, nurse %></td>
 <!--      <td><%#= link_to 'Show', nurse %></td>-->
       <td><%= link_to 'Destroy', nurse, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

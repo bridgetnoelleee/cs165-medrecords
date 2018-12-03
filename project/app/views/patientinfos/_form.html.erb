@@ -11,17 +11,7 @@
     </div>
   <% end %>
 
-<!--  <div class="field">-->
-    <%#= form.label :currMedID %>
-    <%#= form.number_field :currMedID %>
-<!--  </div>-->
-
 <div class = "ui form">
-  <div class="required field">
-    <%= form.label :ID %>
-    <%= form.text_field :patientID %>
-  </div>
-
   <div class="required field">
     <%= form.label :name %>
     <%= form.text_field :name %>
@@ -33,14 +23,49 @@
   </div>
 
   <div class="required field">
+    <%= form.label :"Blood pressure" %>
+    <%= form.text_field :bloodPressure %>
+  </div>
+
+  <div class="required field">
+    <%= form.label :"Height" %>
+    <%= form.number_field :height %>
+  </div>
+
+  <div class="required field">
+    <%= form.label :"Weight" %>
+    <%= form.text_field :weight %>
+  </div>
+
+  <div class="field">
     <%= form.label :"Blood type" %>
     <%= form.text_field :bloodType %>
   </div>
 
   <div class="required field">
+    <%= form.label :"Emergency Contact" %>
+    <%= form.text_area :emergencyContact %>
+  </div>
+
+  <div class="required field">
+    <%= form.label :"Medications" %>
+    <%= form.text_area :medications %>
+  </div>
+
+  <div class="required field">
+    <%= form.label :"Allergies" %>
+    <%= form.text_area :allergies %>
+  </div>
+
+  <div class="required field">
+    <%= form.label :"Symptoms" %>
+    <%= form.text_area :symptoms %>
+  </div>
+
+  <div class="required field">
     <%= form.label :"Date (created)" %>
     <%= form.datetime_select :dateCreated %>
-    </div>
+  </div>
 
   <div class="required field">
     <%= form.label :"Date (updated)" %>
@@ -48,19 +73,15 @@
   </div>
 
   <div class="required field">
-    <%= form.label :emergencyContact %>
-    <%= form.text_area :emergencyContact %>
-  </div>
-
-  <div class="required field">
-    <%= form.label :"Entered/updated by nurse" %>
-    <%= form.text_field :nurseID %>
+    <%= form.label :"Entered nurse ID" %>
+    <%#= form.text_field :nurseID %>
+    <%= form.select :nurseID, options_for_select(Nurse.all.map{|s|[s.nurseName, s.nurseID]}) %>
   </div>
 
 <% end %>
 
 <div class="actions">
-  <button class="ui button"><%=link_to 'Back', patientinfos_path %></button>
+  <%=link_to 'Back', patientinfos_path, {class: "ui button"} %>
   <button class="ui positive button" type="submit">Submit</button>
 </div>
 

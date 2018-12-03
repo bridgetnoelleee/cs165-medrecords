@@ -3,7 +3,6 @@ CREATE DATABASE IF NOT EXISTS MedRecords;
 USE MedRecords;
 
 DROP TABLE IF EXISTS PatientInfos;
-DROP TABLE IF EXISTS CurrentMedicals;
 DROP TABLE IF EXISTS Nurses;
 DROP TABLE IF EXISTS LabTestsResults;
 DROP TABLE IF EXISTS MedicalHistories;
@@ -12,20 +11,6 @@ DROP TABLE IF EXISTS patientHistories;
 DROP TABLE IF EXISTS runTests;
 DROP TABLE IF EXISTS patientTests;
 DROP TABLE IF EXISTS analyzeOrDiagnoses;
-
-CREATE TABLE CurrentMedicals (
-  currMedID       INT NOT NULL AUTO_INCREMENT,
-  dateCreated       TIMESTAMP,
-  dateUpdated       TIMESTAMP,
-  medications       TEXT,
-  allergies       TEXT,
-  symptoms        TEXT,
-  bloodPressure     VARCHAR(50),
-  height          SMALLINT,
-  weight          FLOAT(8,2),
-
-  PRIMARY KEY (currMedID)
-);
 
 CREATE TABLE Nurses (
   nurseID         INT NOT NULL AUTO_INCREMENT,
@@ -37,18 +22,21 @@ CREATE TABLE Nurses (
 
 CREATE TABLE PatientInfos (
   patientID       INT NOT NULL AUTO_INCREMENT,
-  currMedID       INT NOT NULL,
   nurseID         INT NOT NULL,
   name          VARCHAR(50),
   birthDate       DATE,
   bloodType       VARCHAR(10),
+  bloodPressure     VARCHAR(50),
+  medications       TEXT,
+  allergies       TEXT,
+  symptoms        TEXT,
+  height          SMALLINT,
+  weight          FLOAT(8,2),
   dateCreated       TIMESTAMP,
   dateUpdated       TIMESTAMP,
   emergencyContact    TEXT,
 
   PRIMARY KEY (patientID),
-  FOREIGN KEY (currMedID) REFERENCES CurrentMedicals (currMedID)
-    ON DELETE CASCADE,
   FOREIGN KEY (nurseID) REFERENCES Nurses (nurseID)
 );
 
@@ -128,7 +116,6 @@ CREATE TABLE analyzeOrDiagnoses (
 );
 
 DELETE FROM PatientInfos;
-DELETE FROM CurrentMedicals;
 DELETE FROM Nurses;
 DELETE FROM LabTestsResults;
 DELETE FROM MedicalHistories;
@@ -138,17 +125,13 @@ DELETE FROM runTests;
 DELETE FROM patientTests;
 DELETE FROM analyzeOrDiagnoses;
 
-INSERT INTO CurrentMedicals VALUES
-  (001, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 150, 132),
-  (234, NULL, NULL, "medications", "allergies", "symptoms", "bloodpressure", 200, 83.6);
-
 INSERT INTO Nurses VALUES
   (123, "Nurse Nadine Reyes", "Triage"),
   (456, "Nurse Allure Tanquintic", "Rad Tech");
   
 INSERT INTO PatientInfos VALUES
-  (123, 001, 123, "Danielle Reyes", "1998-05-08", "B+", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Vilma Reyes - Mother - 09161234567"),
-  (456, 234, 456, "Juan GDL", "1998-02-14", "AB", CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Javi GDL - Mother - 09161234567");
+  (123, 123, "Danielle Reyes", "1998-05-08", "B+","bloodpressure","medications", "allergies", "symptoms", 150, 132, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Vilma Reyes - Mother - 09161234567"),
+  (456, 456, "Juan GDL", "1998-02-14", "AB", "bloodpressure", "medications", "allergies", "symptoms", 200, 83.6, CURRENT_TIMESTAMP, CURRENT_TIMESTAMP, "Javi GDL - Mother - 09161234567");
 
 INSERT INTO LabTestsResults VALUES
   (010, CURRENT_TIMESTAMP, "Fecalysis", "With Diarrhea"),
@@ -180,7 +163,6 @@ INSERT INTO analyzeOrDiagnoses VALUES
   (2, 7123, 00001);
 
 SELECT * FROM PatientInfos;
-SELECT * FROM CurrentMedicals;
 SELECT * FROM Nurses;
 SELECT * FROM LabTestsResults;
 SELECT * FROM MedicalHistories;

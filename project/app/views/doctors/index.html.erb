@@ -4,15 +4,15 @@
 <div class="ui padded raised text container segment">
 <h1>Doctors</h1>
 
-<table class="ui celled inverted table">
+<table class="ui selectable celled table">
   <div class="actions">
-    <button class="ui positive button"><%= link_to 'New Doctor', new_doctor_path %></button>
-    <button class="ui button"><%= link_to 'Back', dashboard_index_path %></button>
+    <%= link_to 'New Doctor', new_doctor_path, {class: "ui positive button"} %>
+    <%= link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
   <thead>
     <tr>
-      <th>Docname</th>
+      <th>Name</th>
       <th>Specialization</th>
       <th>Department</th>
       <th>Fee</th>

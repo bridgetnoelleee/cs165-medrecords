@@ -11,22 +11,25 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :patientID %>
+<div class="ui form">
+  <div class="ui required field">
+    <%= form.label :"Patient ID" %>
     <%= form.number_field :patientID %>
   </div>
 
-  <div class="field">
-    <%= form.label :testID %>
+  <div class="ui required field">
+    <%= form.label :"Test ID" %>
     <%= form.number_field :testID %>
   </div>
 
-  <div class="field">
-    <%= form.label :dateAndTime %>
+  <div class="ui required field">
+    <%= form.label :"Timestamp" %>
     <%= form.datetime_select :dateAndTime %>
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <%=link_to 'Back', patienttests_path, {class: "ui button"} %>
+    <button class="ui positive button" type="submit">Submit</button>
   </div>
 <% end %>
+</div>

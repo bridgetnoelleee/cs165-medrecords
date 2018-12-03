@@ -3,16 +3,15 @@
 <div class="ui padded raised container segment">
 <h1>Patients</h1>
 
-<table class="ui fixed selectable inverted table">
+<table class="ui fixed selectable table">
 
   <div class="actions">
-    <button class="positive ui button"><%= link_to 'New Patient', new_patientinfo_path %></button>
-    <button class="ui button"><%= link_to 'Back', dashboard_index_path %></button>
+    <%= link_to 'New Patient', new_patientinfo_path, {class: "positive ui button"} %>
+    <%= link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
   <thead>
     <tr>
-      <th>Medical ID</th>
       <th>Name</th>
       <th>Birthdate</th>
       <th>Bloodtype</th>
@@ -27,12 +26,8 @@
   <tbody>
     <% @patientinfos.each do |patientinfo| %>
       <tr>
-        <td class="selectable">
-<!--          <a href=/patientinfos(.:format)><%#= patientinfo.currMedID %></a>-->
-          <%= link_to patientinfo.currMedID, patientinfo %>
-        </td>
 <!--        <td><%#= patientinfo.currMedID %></td>-->
-        <td><%= patientinfo.name %></td>
+        <td class="selectable"><%= link_to patientinfo.name, patientinfo %></td>
         <td><%= patientinfo.birthDate %></td>
         <td><%= patientinfo.bloodType %></td>
         <td><%= patientinfo.emergencyContact %></td>

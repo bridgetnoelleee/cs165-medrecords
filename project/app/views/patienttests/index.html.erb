@@ -1,25 +1,32 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Patienttests</h1>
+<div class="ui padded raised text container segment">
+  <h1>Tests and Patients</h1>
 
-<table>
+  <div class="actions">
+    <%= link_to 'New Test for Patient', new_patienttest_path, {class:"positive ui button new-button"} %>
+    <%=link_to 'Back', dashboard_index_path , {class: "ui button"}%>
+  </div>
+
+<table class="ui selectable celled table">
   <thead>
     <tr>
-      <th>Patientid</th>
-      <th>Testid</th>
-      <th>Dateandtime</th>
-      <th colspan="3"></th>
+      <th>Patient</th>
+      <th>Test</th>
+      <th>Timestamp</th>
+      <th>Delete</th>
     </tr>
   </thead>
 
   <tbody>
     <% @patienttests.each do |patienttest| %>
       <tr>
-        <td><%= patienttest.patientID %></td>
-        <td><%= patienttest.testID %></td>
+        <td class="selectable"><%= link_to Patientinfo.find(patienttest.patientID).name, edit_patienttest_path(patienttest) %></td>
+<!--        <td><%#= Patientinfo.find(patienttest.patientID).name %></td>-->
+        <td><%= Labtestsresult.find(patienttest.testID).testName %></td>
         <td><%= patienttest.dateAndTime %></td>
-        <td><%= link_to 'Show', patienttest %></td>
-        <td><%= link_to 'Edit', edit_patienttest_path(patienttest) %></td>
+<!--        <td><%#= link_to 'Show', patienttest %></td>-->
+<!--        <td><%#= link_to 'Edit', edit_patienttest_path(patienttest) %></td>-->
         <td><%= link_to 'Destroy', patienttest, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
@@ -28,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Patienttest', new_patienttest_path %>
+</div>

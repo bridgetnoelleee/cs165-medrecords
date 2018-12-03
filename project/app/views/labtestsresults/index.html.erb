@@ -4,8 +4,8 @@
 <h1>Lab Test Results</h1>
 
   <div class="actions">
-    <button class="positive ui button"><%= link_to 'New Lab Test Result', new_labtestsresult_path %></button>
-    <button class="ui button"><%=link_to 'Back', dashboard_index_path %></button>
+    <%= link_to 'New Lab Test Result', new_labtestsresult_path, {class:"positive ui button"} %>
+    <%= link_to 'Back', dashboard_index_path, {class: "ui button"} %>
   </div>
 
   <table class="ui celled table">
@@ -16,7 +16,7 @@
       <th>Test Name </th>
       <th>Test Results</th>
 <!--      <th>Edit</th>-->
-<!--      <th>Delete</th>-->
+      <th>Delete</th>
     </tr>
   </thead>
 
@@ -29,7 +29,7 @@
         <td><%= labtestsresult.testResults %></td>
 <!--        <td><%#= link_to 'Show', labtestsresult %></td>-->
 <!--        <td><%#= link_to 'Edit', edit_labtestsresult_path(labtestsresult) %></td>-->
-<!--        <td><%#= link_to 'Destroy', labtestsresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        <td><%= link_to 'Destroy', labtestsresult, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>

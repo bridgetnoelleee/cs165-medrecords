@@ -5,9 +5,11 @@
 
 <div class="content">
   <h3 class="ui black inverted segment header">
-    <button class="ui black icon button"><i class="angle left icon">
-    </i><%= link_to "-", patientinfos_path %>
-    </button>
+<!--    <button class="ui black icon button"><%#= link_to "-", patientinfos_path %>-->
+<!--    </button>-->
+    <%= link_to patientinfos_path, {class: "ui black icon button"} do %>
+      <i class="angle left icon"></i>
+    <% end %>
 
     <%= @patientinfo.name %>
     (ID#:<%= @patientinfo.patientID %>)
@@ -44,76 +46,84 @@
 
   <li>
     <strong>Nurse responsible:</strong>
-    <%= @patientinfo.nurseID %>
+    <%= Nurse.find(@patientinfo.nurseID).nurseName %>
   </li>
 
   <div class="ui section divider"></div>
   <div class="ui hidden divider">Medical Information</div>
   <p>
   <li>
-    <strong>Current Medical ID:</strong>
-    <%= @patientinfo.currMedID %>
+    <strong>Height: </strong>
+    <%= @patientinfo.height %>
   </li>
-    <li>
-      <strong>Height: </strong>
-      <%= Currentmedical.find(@patientinfo.currMedID).height %>
-    </li>
 
-    <li>
-      <strong>Weight: </strong>
-      <%= Currentmedical.find(@patientinfo.currMedID).weight %>
-    </li>
+  <li>
+    <strong>Weight: </strong>
+    <%= @patientinfo.weight %>
+  </li>
 
-    <li>
-      <strong>Allergies: </strong>
-      <%= Currentmedical.find(@patientinfo.currMedID).allergies %>
-    </li>
+  <li>
+    <strong>Allergies: </strong>
+    <%= @patientinfo.allergies %>
+  </li>
 
-    <li>
-      <strong>Blood Pressure: </strong>
-      <%= Currentmedical.find(@patientinfo.currMedID).bloodPressure %>
-    </li>
+  <li>
+    <strong>Blood Pressure: </strong>
+    <%= @patientinfo.bloodPressure %>
+  </li>
 
-    <li>
-      <strong>Symptoms: </strong>
-      <%= Currentmedical.find(@patientinfo.currMedID).symptoms %>
-    </li>
+  <li>
+    <strong>Symptoms: </strong>
+    <%= @patientinfo.symptoms %>
+  </li>
 
   <li>
     <strong>Medications: </strong>
-    <%= Currentmedical.find(@patientinfo.currMedID).medications %>
+    <%= @patientinfo.medications %>
   </li>
 
   <li>
     <strong>Date Created: </strong>
-    <%= Currentmedical.find(@patientinfo.currMedID).dateCreated %>
+    <%= @patientinfo.dateCreated %>
   </li>
 
   <li>
     <strong>Date Updated: </strong>
-    <%= Currentmedical.find(@patientinfo.currMedID).dateUpdated %>
+    <%= @patientinfo.dateUpdated %>
   </li>
 
   <div class="ui section divider"></div>
   <div class="ui hidden divider">Medical History</div>
-  <li>
-    <strong>Medical History ID:</strong>
-    <%= @patientinfo.currMedID %>
-  </li>
-  <li>
-    <strong>Height: </strong>
-    <%= Patienthistory.pluck(:patientID, :medHisID).each do |patient, history| %>
-      <%= patient %>
+    <% Patienthistory.where(patientID=params[:id]).each do |patient| %>
+      <% Medicalhistory.where(medHisID:patient.medHisID).each do |history| %>
+      <li>
+        <strong>Medical History ID: </strong>
+        <%= history.medHisID %>
+      </li>
+
+      <li>
+        <strong>Timestamp: </strong>
+        <%= history.dateAndTime %>
+      </li>
+
+      <li>
+        <strong>Medication: </strong>
+        <%= history.medication %>
+      </li>
+
+      <li>
+        <strong>Disease / Condition: </strong>
+        <%= history.diseaseOrCondition %>
+      </li>
+
+<!--      <li>-->
+<!--        <strong>Diagnosed by: </strong>-->
+        <%#= Analyzeordiagnose.where(medHisID:history.medHisID).first.doctor.docName %>
+<!--      </li>-->
+
+      <% end %>
     <% end %>
   </li>
-
-  <%# Patienthistories.find(@patientinfo.patientID).each do |medhistory| %>
-        <%#= link_to patientinfo.currMedID, patientinfo %>
-      <%#= Medicalhistories.find(medhistory.medHisID).medication %>
-
-  <%# end %>
-  <%# Patienthistories.find(@patientinfo.patientID)%>
-
 
 </div>
 

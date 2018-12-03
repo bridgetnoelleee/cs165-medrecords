@@ -6,17 +6,16 @@
 
   <div class="content">
     <h3 class="ui black inverted segment header">
-      <button class="ui black icon button"><i class="angle left icon">
-      </i><%= link_to "-", doctors_path %>
-      </button>
+      <%= link_to doctors_path, {class: "ui black icon button"} do %>
+        <i class="angle left icon"></i>
+      <% end %>
 
       <%= @doctor.docName %>
       (ID#:<%= @doctor.doctorID %>)
     </h3>
 
     <div class="ui hidden divider">Information
-      <button class="ui mini white basic button"><%= link_to 'Edit', edit_doctor_path(@doctor)%></i>
-      </button></div><br>
+      <%= link_to 'Edit', edit_doctor_path(@doctor), {class: "ui mini white basic button"}%> </div><br>
 
     <li>
       <strong>Docname:</strong>
