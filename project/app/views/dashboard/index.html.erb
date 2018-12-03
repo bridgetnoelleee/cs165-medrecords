@@ -21,11 +21,12 @@
   <div class="column">
     <div class="ui centered blue card">
       <div class="content">
-        <div class="header"><i class="user icon">&nbsp;&nbsp;Patients</i></div>
+        <div class="header"><i class="users icon">&nbsp;&nbsp;People</i></div>
       </div>
       <div class="content">
         <li><%= link_to 'Patients', patientinfos_path %></li>
-        <li><%= link_to 'Patient Tests', patienttests_path %></li>
+        <li><%= link_to 'Doctors', doctors_path%></li>
+        <li><%= link_to 'Nurses', nurses_path%></li>
         <!--          <li><%#= link_to 'Current Medical', currentmedicals_path%></li>-->
         <!--          <li><%#= link_to 'Medical History', medicalhistories_path%></li>-->
         <!--          <li><%#= link_to 'Patient History', patienthistories_path%></li>-->
@@ -36,13 +37,12 @@
   <div class="column">
     <div class="ui centered blue card">
       <div class="content">
-        <div class="header"><i class="user md icon">&nbsp;&nbsp;Staff</i></div>
+        <div class="header"><i class="clipboard icon">&nbsp;&nbsp;Tests</i></div>
       </div>
       <div class="content">
-        <li><%= link_to 'Doctors', doctors_path%></li>
-        <li><%= link_to 'Nurses', nurses_path%></li>
         <!--          <li><%#= link_to 'Analysis', analyzeordiagnoses_path%></li>-->
         <!--          <li><%#= link_to 'Ran tests', runtests_path%></li>-->
+        <li><%= link_to 'Patient Tests', patienttests_path %></li>
         <li><%= link_to 'Lab Test Results', labtestsresults_path%></li>
       </div>
     </div>

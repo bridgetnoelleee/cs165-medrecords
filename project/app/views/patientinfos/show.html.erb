@@ -5,14 +5,12 @@
 
 <div class="content">
   <h3 class="ui black inverted segment header">
-<!--    <button class="ui black icon button"><%#= link_to "-", patientinfos_path %>-->
-<!--    </button>-->
     <%= link_to patientinfos_path, {class: "ui black icon button"} do %>
       <i class="angle left icon"></i>
     <% end %>
 
     <%= @patientinfo.name %>
-    (ID#:<%= @patientinfo.patientID %>)
+    &nbsp;(ID#:<%= @patientinfo.patientID %>)
   </h3>
 
   <div class="ui hidden divider">Personal Information
@@ -94,7 +92,7 @@
 
   <div class="ui section divider"></div>
   <div class="ui hidden divider">Medical History</div>
-    <% Patienthistory.where(@patientinfo.patientID==params[:id]).each do |patient| %>
+    <% Patienthistory.where(@patientinfo.patientID=params[:id]).each do |patient| %>
       <% Medicalhistory.where(medHisID:patient.medHisID).each do |history| %>
       <li>
         <strong>Medical History ID: </strong>

@@ -13,19 +13,19 @@
 
 
 <div class = "ui form">
-  <div class="field">
-    <%= form.label :"Test ID" %>
-    <%= form.number_field :testID %>
+<!--  <div class="field">-->
+    <%#= form.label :"Test ID" %>
+    <%#= form.number_field :testID %>
+<!--  </div>-->
+
+  <div class="ui required field">
+    <%= form.label :"Test name" %>
+    <%= form.text_field :testName %>
   </div>
 
   <div class="ui required field">
     <%= form.label :"Timestamp" %>
     <%= form.datetime_select :dateAndTime %>
-  </div>
-
-  <div class="ui required field">
-    <%= form.label :"Test name" %>
-    <%= form.text_field :testName %>
   </div>
 
   <div class="ui required field">
