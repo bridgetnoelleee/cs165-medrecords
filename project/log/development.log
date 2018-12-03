@@ -11308,3 +11308,359 @@ Processing by DashboardController#index as HTML
 Completed 200 OK in 326ms (Views: 288.6ms | ActiveRecord: 0.0ms)
 
 
+  [1m[35m (0.7ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (71.4ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT GET_LOCK('4554990436752307860', 0)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.9ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (1.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (1.6ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-03 12:08:09', '2018-12-03 12:08:09')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[34mSELECT RELEASE_LOCK('4554990436752307860')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4554990436752307860', 0)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4554990436752307860')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (162.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `medrecords`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.8ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE DATABASE `medrecords` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE DATABASE `db/newtest` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ db/schema.rb:15
+  [1m[35m (2.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `CurrentMedicals` CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `CurrentMedicals` (`currMedID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateCreated` timestamp NULL, `dateUpdated` timestamp NULL, `medications` text, `allergies` text, `symptoms` text, `bloodPressure` varchar(50), `height` smallint, `weight` float(24)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `Doctors` CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (9.5ms)[0m  [1m[35mCREATE TABLE `Doctors` (`doctorID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `docName` varchar(50), `specialization` varchar(50), `department` varchar(50), `fee` decimal(15,2), `schedule` varchar(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:26
+  [1m[35m (2.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `LabTestsResults` CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE `LabTestsResults` (`testID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateAndTime` timestamp NULL, `testName` varchar(50), `testResults` text) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `MedicalHistories` CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (11.3ms)[0m  [1m[35mCREATE TABLE `MedicalHistories` (`medHisID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateAndTime` timestamp NULL, `medication` text, `diseaseOrCondition` text) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:40
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `Nurses` CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE `Nurses` (`nurseID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `nurseName` varchar(50), `department` varchar(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:46
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `PatientInfos` CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (10.0ms)[0m  [1m[35mCREATE TABLE `PatientInfos` (`patientID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `currMedID` int NOT NULL, `nurseID` int NOT NULL, `name` varchar(50), `birthDate` date, `bloodType` varchar(10), `dateCreated` timestamp NULL, `dateUpdated` timestamp NULL, `emergencyContact` text,  INDEX `currMedID`  (`currMedID`),  INDEX `nurseID`  (`nurseID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS `analyzeOrDiagnoses` CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE TABLE `analyzeOrDiagnoses` (`adID` int NOT NULL PRIMARY KEY, `doctorID` int, `medHisID` int,  INDEX `doctorID`  (`doctorID`),  INDEX `medHisID`  (`medHisID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:64
+  [1m[35m (2.0ms)[0m  [1m[35mDROP TABLE IF EXISTS `patientHistories` CASCADE[0m
+  ↳ db/schema.rb:71
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE TABLE `patientHistories` (`patientHisID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `patientID` int, `medHisID` int,  INDEX `medHisID`  (`medHisID`),  INDEX `patientID`  (`patientID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:71
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `patientTests` CASCADE[0m
+  ↳ db/schema.rb:78
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE `patientTests` (`patientTestID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `patientID` int, `testID` int, `dateAndTime` timestamp NULL,  INDEX `patientID`  (`patientID`),  INDEX `testID`  (`testID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:78
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `runTests` CASCADE[0m
+  ↳ db/schema.rb:86
+  [1m[35m (16.6ms)[0m  [1m[35mCREATE TABLE `runTests` (`runtestID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `nurseID` int, `testID` int, `dateAndTime` timestamp NULL,  INDEX `nurseID`  (`nurseID`),  INDEX `testID`  (`testID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:86
+  [1m[35m (40.4ms)[0m  [1m[35mALTER TABLE `PatientInfos` ADD CONSTRAINT `patientinfos_ibfk_1`
+FOREIGN KEY (`currMedID`)
+  REFERENCES `CurrentMedicals` (`currmedid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:94
+  [1m[35m (24.8ms)[0m  [1m[35mALTER TABLE `PatientInfos` ADD CONSTRAINT `patientinfos_ibfk_2`
+FOREIGN KEY (`nurseID`)
+  REFERENCES `Nurses` (`nurseid`)
+[0m
+  ↳ db/schema.rb:95
+  [1m[35m (32.6ms)[0m  [1m[35mALTER TABLE `analyzeOrDiagnoses` ADD CONSTRAINT `analyzeordiagnoses_ibfk_1`
+FOREIGN KEY (`doctorID`)
+  REFERENCES `Doctors` (`doctorid`)
+[0m
+  ↳ db/schema.rb:96
+  [1m[35m (31.1ms)[0m  [1m[35mALTER TABLE `analyzeOrDiagnoses` ADD CONSTRAINT `analyzeordiagnoses_ibfk_2`
+FOREIGN KEY (`medHisID`)
+  REFERENCES `MedicalHistories` (`medhisid`)
+[0m
+  ↳ db/schema.rb:97
+  [1m[35m (24.3ms)[0m  [1m[35mALTER TABLE `patientHistories` ADD CONSTRAINT `patienthistories_ibfk_2`
+FOREIGN KEY (`medHisID`)
+  REFERENCES `MedicalHistories` (`medhisid`)
+[0m
+  ↳ db/schema.rb:98
+  [1m[35m (34.9ms)[0m  [1m[35mALTER TABLE `patientHistories` ADD CONSTRAINT `patienthistories_ibfk_1`
+FOREIGN KEY (`patientID`)
+  REFERENCES `PatientInfos` (`patientid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:99
+  [1m[35m (24.1ms)[0m  [1m[35mALTER TABLE `patientTests` ADD CONSTRAINT `patienttests_ibfk_2`
+FOREIGN KEY (`testID`)
+  REFERENCES `LabTestsResults` (`testid`)
+[0m
+  ↳ db/schema.rb:100
+  [1m[35m (28.6ms)[0m  [1m[35mALTER TABLE `patientTests` ADD CONSTRAINT `patienttests_ibfk_1`
+FOREIGN KEY (`patientID`)
+  REFERENCES `PatientInfos` (`patientid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:101
+  [1m[35m (30.7ms)[0m  [1m[35mALTER TABLE `runTests` ADD CONSTRAINT `runtests_ibfk_2`
+FOREIGN KEY (`testID`)
+  REFERENCES `LabTestsResults` (`testid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:102
+  [1m[35m (26.7ms)[0m  [1m[35mALTER TABLE `runTests` ADD CONSTRAINT `runtests_ibfk_1`
+FOREIGN KEY (`nurseID`)
+  REFERENCES `Nurses` (`nurseid`)
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (8.6ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (2.5ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (0)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.2ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-03 12:22:27', '2018-12-03 12:22:27')[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.5ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.2ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ db/schema.rb:15
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS `CurrentMedicals` CASCADE[0m
+  ↳ db/schema.rb:15
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE TABLE `CurrentMedicals` (`currMedID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateCreated` timestamp NULL, `dateUpdated` timestamp NULL, `medications` text, `allergies` text, `symptoms` text, `bloodPressure` varchar(50), `height` smallint, `weight` float(24)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:15
+  [1m[35m (1.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `Doctors` CASCADE[0m
+  ↳ db/schema.rb:26
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE TABLE `Doctors` (`doctorID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `docName` varchar(50), `specialization` varchar(50), `department` varchar(50), `fee` decimal(15,2), `schedule` varchar(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:26
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `LabTestsResults` CASCADE[0m
+  ↳ db/schema.rb:34
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE TABLE `LabTestsResults` (`testID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateAndTime` timestamp NULL, `testName` varchar(50), `testResults` text) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:34
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `MedicalHistories` CASCADE[0m
+  ↳ db/schema.rb:40
+  [1m[35m (10.1ms)[0m  [1m[35mCREATE TABLE `MedicalHistories` (`medHisID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `dateAndTime` timestamp NULL, `medication` text, `diseaseOrCondition` text) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:40
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `Nurses` CASCADE[0m
+  ↳ db/schema.rb:46
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE TABLE `Nurses` (`nurseID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `nurseName` varchar(50), `department` varchar(50)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:46
+  [1m[35m (1.5ms)[0m  [1m[35mDROP TABLE IF EXISTS `PatientInfos` CASCADE[0m
+  ↳ db/schema.rb:51
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE TABLE `PatientInfos` (`patientID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `currMedID` int NOT NULL, `nurseID` int NOT NULL, `name` varchar(50), `birthDate` date, `bloodType` varchar(10), `dateCreated` timestamp NULL, `dateUpdated` timestamp NULL, `emergencyContact` text,  INDEX `currMedID`  (`currMedID`),  INDEX `nurseID`  (`nurseID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:51
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS `analyzeOrDiagnoses` CASCADE[0m
+  ↳ db/schema.rb:64
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE `analyzeOrDiagnoses` (`adID` int NOT NULL PRIMARY KEY, `doctorID` int, `medHisID` int,  INDEX `doctorID`  (`doctorID`),  INDEX `medHisID`  (`medHisID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:64
+  [1m[35m (2.3ms)[0m  [1m[35mDROP TABLE IF EXISTS `patientHistories` CASCADE[0m
+  ↳ db/schema.rb:71
+  [1m[35m (10.2ms)[0m  [1m[35mCREATE TABLE `patientHistories` (`patientHisID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `patientID` int, `medHisID` int,  INDEX `medHisID`  (`medHisID`),  INDEX `patientID`  (`patientID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:71
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `patientTests` CASCADE[0m
+  ↳ db/schema.rb:78
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE `patientTests` (`patientTestID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `patientID` int, `testID` int, `dateAndTime` timestamp NULL,  INDEX `patientID`  (`patientID`),  INDEX `testID`  (`testID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:78
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS `runTests` CASCADE[0m
+  ↳ db/schema.rb:86
+  [1m[35m (8.4ms)[0m  [1m[35mCREATE TABLE `runTests` (`runtestID` int NOT NULL AUTO_INCREMENT PRIMARY KEY, `nurseID` int, `testID` int, `dateAndTime` timestamp NULL,  INDEX `nurseID`  (`nurseID`),  INDEX `testID`  (`testID`)) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_0900_ai_ci[0m
+  ↳ db/schema.rb:86
+  [1m[35m (30.8ms)[0m  [1m[35mALTER TABLE `PatientInfos` ADD CONSTRAINT `patientinfos_ibfk_1`
+FOREIGN KEY (`currMedID`)
+  REFERENCES `CurrentMedicals` (`currmedid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:94
+  [1m[35m (28.3ms)[0m  [1m[35mALTER TABLE `PatientInfos` ADD CONSTRAINT `patientinfos_ibfk_2`
+FOREIGN KEY (`nurseID`)
+  REFERENCES `Nurses` (`nurseid`)
+[0m
+  ↳ db/schema.rb:95
+  [1m[35m (24.9ms)[0m  [1m[35mALTER TABLE `analyzeOrDiagnoses` ADD CONSTRAINT `analyzeordiagnoses_ibfk_1`
+FOREIGN KEY (`doctorID`)
+  REFERENCES `Doctors` (`doctorid`)
+[0m
+  ↳ db/schema.rb:96
+  [1m[35m (18.3ms)[0m  [1m[35mALTER TABLE `analyzeOrDiagnoses` ADD CONSTRAINT `analyzeordiagnoses_ibfk_2`
+FOREIGN KEY (`medHisID`)
+  REFERENCES `MedicalHistories` (`medhisid`)
+[0m
+  ↳ db/schema.rb:97
+  [1m[35m (25.2ms)[0m  [1m[35mALTER TABLE `patientHistories` ADD CONSTRAINT `patienthistories_ibfk_2`
+FOREIGN KEY (`medHisID`)
+  REFERENCES `MedicalHistories` (`medhisid`)
+[0m
+  ↳ db/schema.rb:98
+  [1m[35m (27.0ms)[0m  [1m[35mALTER TABLE `patientHistories` ADD CONSTRAINT `patienthistories_ibfk_1`
+FOREIGN KEY (`patientID`)
+  REFERENCES `PatientInfos` (`patientid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:99
+  [1m[35m (20.0ms)[0m  [1m[35mALTER TABLE `patientTests` ADD CONSTRAINT `patienttests_ibfk_2`
+FOREIGN KEY (`testID`)
+  REFERENCES `LabTestsResults` (`testid`)
+[0m
+  ↳ db/schema.rb:100
+  [1m[35m (30.5ms)[0m  [1m[35mALTER TABLE `patientTests` ADD CONSTRAINT `patienttests_ibfk_1`
+FOREIGN KEY (`patientID`)
+  REFERENCES `PatientInfos` (`patientid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:101
+  [1m[35m (28.3ms)[0m  [1m[35mALTER TABLE `runTests` ADD CONSTRAINT `runtests_ibfk_2`
+FOREIGN KEY (`testID`)
+  REFERENCES `LabTestsResults` (`testid`)
+ ON DELETE CASCADE[0m
+  ↳ db/schema.rb:102
+  [1m[35m (20.2ms)[0m  [1m[35mALTER TABLE `runTests` ADD CONSTRAINT `runtests_ibfk_1`
+FOREIGN KEY (`nurseID`)
+  REFERENCES `Nurses` (`nurseid`)
+[0m
+  ↳ db/schema.rb:103
+  [1m[35m (8.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ db/schema.rb:13
+  [1m[35m (1.0ms)[0m  [1m[32mINSERT INTO `schema_migrations` (version) VALUES (0)[0m
+  ↳ db/schema.rb:13
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-03 12:22:28', '2018-12-03 12:22:28')[0m
+  ↳ db/schema.rb:13
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ db/schema.rb:13
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Update (2.2ms)[0m  [1m[33mUPDATE `ar_internal_metadata` SET `value` = 'test' WHERE `ar_internal_metadata`.`key` = 'environment'[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (119.6ms)[0m  [1m[35mDROP DATABASE IF EXISTS `medrecords`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.3ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (63.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS `db/newtest`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.8ms)[0m  [1m[35mCREATE DATABASE `medrecords` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.4ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.3ms)[0m  [1m[35mCREATE DATABASE `db/newtest` DEFAULT CHARACTER SET `utf8`[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.9ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4554990436752307860', 0)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-03 12:22:50', '2018-12-03 12:22:50')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4554990436752307860')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (2.5ms)[0m  [1m[35mSET NAMES utf8,  @@SESSION.sql_mode = CONCAT(CONCAT(@@sql_mode, ',STRICT_ALL_TABLES'), ',NO_AUTO_VALUE_ON_ZERO'),  @@SESSION.sql_auto_is_null = 0, @@SESSION.wait_timeout = 2147483[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (113.5ms)[0m  [1m[35mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL PRIMARY KEY)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (7.0ms)[0m  [1m[35mCREATE TABLE `ar_internal_metadata` (`key` varchar(255) NOT NULL PRIMARY KEY, `value` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT GET_LOCK('4554990436752307860', 0)[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT  `ar_internal_metadata`.* FROM `ar_internal_metadata` WHERE `ar_internal_metadata`.`key` = 'environment' LIMIT 1[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[36mActiveRecord::InternalMetadata Create (0.3ms)[0m  [1m[32mINSERT INTO `ar_internal_metadata` (`key`, `value`, `created_at`, `updated_at`) VALUES ('environment', 'development', '2018-12-03 12:24:20', '2018-12-03 12:24:20')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.6ms)[0m  [1m[35mCOMMIT[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT RELEASE_LOCK('4554990436752307860')[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT `schema_migrations`.`version` FROM `schema_migrations` ORDER BY `schema_migrations`.`version` ASC[0m
+  ↳ /Users/bridgetnoelleee/.rvm/gems/ruby-2.5.3/bin/rake:23

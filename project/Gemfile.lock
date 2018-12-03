@@ -99,7 +99,7 @@ GEM
       tilt
     less-rails-semantic_ui (2.3.1.0)
       less-rails (>= 2.6.0, < 2.8.0)
-    libv8 (3.16.14.19)
+    libv8 (3.16.14.19-x86_64-darwin-18)
     loofah (2.2.3)
       crass (~> 1.0.2)
       nokogiri (>= 1.5.9)
